@@ -2,8 +2,8 @@
 @use "component";
 
 body {
-  background-color: colors.$slate-50; 
-  color:colors.$slate-800;
+  background-color: colors.$slate-50;
+  color: colors.$slate-800;
 }
 
 header {
@@ -18,12 +18,149 @@ header {
   transition: all 0.3s ease;
 }
 
-.outer-div-1{
+.outer-div-1 {
   height: 5rem;
 }
 
-.outer-div-2{
+.outer-div-2 {
   color: colors.$white;
- box-shadow: 0 4px 12px rgba(colors.$custom-primary, 0.3);
-  background-color:colors.$custom-primary;
+  box-shadow: 0 4px 12px rgba(colors.$custom-primary, 0.3);
+  background-color: colors.$custom-primary;
 }
+
+.outer-div-2 span{
+  font-size: 24px;
+}
+
+.Logo.text {
+  color: colors.$slate-900;
+}
+
+.Logo-subText {
+  color: colors.$custom-primary;
+  font-size: 11px;
+}
+
+.Search-Bar{
+  display: none;
+  width: 280px;
+}
+
+.searchBar-icon{
+  color: colors.$slate-400;
+  pointer-events: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.searchBar-icon:focus-within {
+  .search-icon {
+    color: colors.$custom-primary;        
+  }
+}
+
+.searchBar-icon span{
+  font-size: 20px;
+}
+
+
+.SearchBar-textarea:focus {
+  border-color: colors.$custom-primary;
+  background-color: colors.$white;
+  box-shadow: 0 0 0 0.2rem rgba(colors.$custom-primary, 0.2);
+}
+
+
+.SearchBar-textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+.SearchBar-textarea::placeholder {
+  color: colors.$slate-400;
+  opacity: 1;
+}
+
+.Nav-Links{
+  color: colors.$slate-600;
+}
+
+.Nav-Links a:hover{
+  color: colors.$custom-primary;
+}
+
+.Sign-In-btn{
+  background-color: colors.$slate-900;
+  color: colors.$white;
+
+}
+
+.Sign-In-btn:hover{
+  background-color: colors.$slate-800;
+}
+
+.hero-outer-div-1{
+  background-color: colors.$slate-50;
+}
+.hero-outer-div-2 {
+  max-width: 1400px;
+}
+
+.Hero-Top-Tagline{
+  background-color:rgba(colors.$custom-primary, 0.1);
+
+  color: colors.$custom-primary;
+  font-size: x-small;
+}
+
+.Hero-Main-Title{
+  color: colors.$slate-900;
+}
+.Hero-main-title-2{
+  color: colors.$custom-primary;
+}
+
+.Hero-sub-title{
+  color: colors.$slate-600;
+}
+
+.Explore-btn{
+background-color: colors.$custom-primary;
+color: colors.$white;
+ box-shadow: 0 4px 16px rgba(colors.$custom-primary, 0.3);
+ transition: all 0.2s ease-in-out;
+  transform: translateZ(0);
+}
+
+.Explore-btn:hover{
+
+   transform: translateY(-0.125rem);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (width >= 80rem) { 
+.Search-Bar{
+  width: 420px;
+}
+.hamburger{
+  color: colors.$slate-600;
+  display:none;
+}
+.hamburger:hover{
+  color: colors.$custom-primary;
+}
+.hero-outer-div-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ }

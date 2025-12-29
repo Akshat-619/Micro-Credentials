@@ -44,4 +44,127 @@ header {
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 103, 23, 0.3);
   background-color: #006717;
+}
+
+.outer-div-2 span {
+  font-size: 24px;
+}
+
+.Logo.text {
+  color: #0f172a;
+}
+
+.Logo-subText {
+  color: #006717;
+  font-size: 11px;
+}
+
+.Search-Bar {
+  display: none;
+  width: 280px;
+}
+
+.searchBar-icon {
+  color: #94a3b8;
+  pointer-events: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.searchBar-icon:focus-within .search-icon {
+  color: #006717;
+}
+
+.searchBar-icon span {
+  font-size: 20px;
+}
+
+.SearchBar-textarea:focus {
+  border-color: #006717;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 103, 23, 0.2);
+}
+
+.SearchBar-textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+.SearchBar-textarea::-moz-placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.SearchBar-textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.Nav-Links {
+  color: #475569;
+}
+
+.Nav-Links a:hover {
+  color: #006717;
+}
+
+.Sign-In-btn {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.Sign-In-btn:hover {
+  background-color: #1e293b;
+}
+
+.hero-outer-div-1 {
+  background-color: #f8fafc;
+}
+
+.hero-outer-div-2 {
+  max-width: 1400px;
+}
+
+.Hero-Top-Tagline {
+  background-color: rgba(0, 103, 23, 0.1);
+  color: #006717;
+  font-size: x-small;
+}
+
+.Hero-Main-Title {
+  color: #0f172a;
+}
+
+.Hero-main-title-2 {
+  color: #006717;
+}
+
+.Hero-sub-title {
+  color: #475569;
+}
+
+.Explore-btn {
+  background-color: #006717;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 103, 23, 0.3);
+  transition: all 0.2s ease-in-out;
+  transform: translateZ(0);
+}
+
+.Explore-btn:hover {
+  transform: translateY(-0.125rem);
+}
+
+@media (width >= 80rem) {
+  .Search-Bar {
+    width: 420px;
+  }
+  .hamburger {
+    color: #475569;
+    display: none;
+  }
+  .hamburger:hover {
+    color: #006717;
+  }
+  .hero-outer-div-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }/*# sourceMappingURL=main.css.map */
