@@ -52,11 +52,10 @@ header {
   transition: color 0.2s ease-in-out;
 }
 
-.searchBar-icon:focus-within {
-  .search-icon {
-    color: colors.$custom-primary;        
-  }
+.search-group:focus-within .searchBar-icon {
+  color: colors.$custom-primary;
 }
+
 
 .searchBar-icon span{
   font-size: 20px;
@@ -131,10 +130,164 @@ color: colors.$white;
 }
 
 .Explore-btn:hover{
-
    transform: translateY(-0.125rem);
+}
+
+.Watch-Video-btn{
+  color: colors.$slate-700;
+  transition: color 0.2s ease-in-out;
+}
+
+.Watch-Video-btn:hover{
+  color: colors.$custom-primary;
+}
+
+.hero-img-outer-div-1{
+  width: 64px;
+  height: 64px;
+  background-color:rgba(colors.$custom-primary, 0.5);
+}
+.hero-img-outer-div-2{
+  width: 64px;
+  height: 64px;
+  background-color:rgba(colors.$indigo-500, 0.5);
+}
+
+.Hero-Img{
+  border-color: colors.$slate-200;
+  height: 400px;
+}
+
+#explore-credentials{
+  background-color: colors.$white;
+  border-color: colors.$slate-200;
+}
+
+.explore-credentials-outer-div-1{
+max-width: 1400px;
+}
+.Microcredentials-Title{
+  color: colors.$slate-900;
+}
+
+.Microcredentials-subTitle{
+  font-size: x-small;
+  color: colors.$slate-500;
+}
+
+.Credentials-btn{
+  background-color: colors.$white;
+  color: colors.$custom-primary;
+}
+
+.Collections-btn, .Pathways-btn{
+  color: colors.$slate-600;
+  transition: color 0.2s ease-in-out;
+}
+.Collections-btn,
+.Pathways-btn
+:hover{
+  color: colors.$slate-900;
+}
+
+.Featured-Credentials{
+  color: colors.$slate-900;
+}
+.Filter-List-icon{
+  color: colors.$custom-primary;
+}
+
+.View-Credentials{
+  color: colors.$custom-primary;
+  transition: color 0.2s ease-in-out;
+}
+
+.View-Credentials:hover{
+  text-decoration: underline;
+}
+
+.Microcredentials-Card-1{
+  background-color: colors.$white;
+  border-color: colors.$slate-200;
+  transition: all 0.3s ease-in-out;
+}
+.Microcredentials-Card-1:hover{
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.Microcredentials-inner-div{
+  height: 48px;
+  background-color:colors.$slate-100;
+}
+
+.Microcredentials-Card-1-img{
+  transition: transform 0.7s ease-in-out;
 
 }
+
+.Microcredentials-Card-1-img:hover{
+   transform: scale(1.05);
+}
+
+.Microcredentials-Card-1-bottom-div-1{
+   background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+}
+
+.Microcredentials-Card-1-innerSpan{
+  background-color:rgba(colors.$white, 0.2);
+  border-color: rgba(colors.$white, 0.3);
+  color: colors.$white;
+  font-size: x-small;
+   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.Microcredentials-Card-1-innercontent-Title{
+  color: colors.$slate-900;
+  transition: color 0.2s ease-in-out;
+}
+
+.Microcredentials-Card-1-innercontent-Title:hover{
+  color: colors.$custom-primary;
+}
+.Microcredentials-Card-1-innercontent-subTitle{
+  color: colors.$slate-500;
+  font-size: small;
+}
+
+.Microcredentials-Card-1-innercontent-Sliderlables{
+  font-size: x-small;
+  color: colors.$slate-500;
+}
+
+.Microcredentials-Card-1-innercontent-Slider{
+  height: 0.375rem;
+}
+
+.Microcredentials-Card-1-innercontent-Slider-1{
+  background-color: colors.$custom-primary;
+}
+
+.Microcredentials-Card-1-innercontent-Slider-2{
+  background-color: rgba(colors.$custom-primary,0.3);
+}
+
+.Microcredentials-Card-1-innercontent-Slider-3,
+.Microcredentials-Card-1-innercontent-Slider-4
+{
+  background-color: colors.$slate-100;
+}
+
+
+
+
+
+
+
 
 
 

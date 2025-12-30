@@ -70,7 +70,7 @@ header {
   transition: color 0.2s ease-in-out;
 }
 
-.searchBar-icon:focus-within .search-icon {
+.search-group:focus-within .searchBar-icon {
   color: #006717;
 }
 
@@ -151,6 +151,154 @@ header {
 
 .Explore-btn:hover {
   transform: translateY(-0.125rem);
+}
+
+.Watch-Video-btn {
+  color: #334155;
+  transition: color 0.2s ease-in-out;
+}
+
+.Watch-Video-btn:hover {
+  color: #006717;
+}
+
+.hero-img-outer-div-1 {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(0, 103, 23, 0.5);
+}
+
+.hero-img-outer-div-2 {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(99, 102, 241, 0.5);
+}
+
+.Hero-Img {
+  border-color: #e2e8f0;
+  height: 400px;
+}
+
+#explore-credentials {
+  background-color: #ffffff;
+  border-color: #e2e8f0;
+}
+
+.explore-credentials-outer-div-1 {
+  max-width: 1400px;
+}
+
+.Microcredentials-Title {
+  color: #0f172a;
+}
+
+.Microcredentials-subTitle {
+  font-size: x-small;
+  color: #64748b;
+}
+
+.Credentials-btn {
+  background-color: #ffffff;
+  color: #006717;
+}
+
+.Collections-btn, .Pathways-btn {
+  color: #475569;
+  transition: color 0.2s ease-in-out;
+}
+
+.Collections-btn,
+.Pathways-btn :hover {
+  color: #0f172a;
+}
+
+.Featured-Credentials {
+  color: #0f172a;
+}
+
+.Filter-List-icon {
+  color: #006717;
+}
+
+.View-Credentials {
+  color: #006717;
+  transition: color 0.2s ease-in-out;
+}
+
+.View-Credentials:hover {
+  text-decoration: underline;
+}
+
+.Microcredentials-Card-1 {
+  background-color: #ffffff;
+  border-color: #e2e8f0;
+  transition: all 0.3s ease-in-out;
+}
+
+.Microcredentials-Card-1:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.Microcredentials-inner-div {
+  height: 48px;
+  background-color: #f1f5f9;
+}
+
+.Microcredentials-Card-1-img {
+  transition: transform 0.7s ease-in-out;
+}
+
+.Microcredentials-Card-1-img:hover {
+  transform: scale(1.05);
+}
+
+.Microcredentials-Card-1-bottom-div-1 {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.Microcredentials-Card-1-innerSpan {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: x-small;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.Microcredentials-Card-1-innercontent-Title {
+  color: #0f172a;
+  transition: color 0.2s ease-in-out;
+}
+
+.Microcredentials-Card-1-innercontent-Title:hover {
+  color: #006717;
+}
+
+.Microcredentials-Card-1-innercontent-subTitle {
+  color: #64748b;
+  font-size: small;
+}
+
+.Microcredentials-Card-1-innercontent-Sliderlables {
+  font-size: x-small;
+  color: #64748b;
+}
+
+.Microcredentials-Card-1-innercontent-Slider {
+  height: 0.375rem;
+}
+
+.Microcredentials-Card-1-innercontent-Slider-1 {
+  background-color: #006717;
+}
+
+.Microcredentials-Card-1-innercontent-Slider-2 {
+  background-color: rgba(0, 103, 23, 0.3);
+}
+
+.Microcredentials-Card-1-innercontent-Slider-3,
+.Microcredentials-Card-1-innercontent-Slider-4 {
+  background-color: #f1f5f9;
 }
 
 @media (width >= 80rem) {
