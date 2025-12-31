@@ -19,300 +19,443 @@
 /* =====================================================
    STATUS / FEEDBACK (FUTURE SAFE)
 ===================================================== */
-body {
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.lato-light-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* =====================================================
+   BASE
+===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: "Lato", sans-serif;
   background-color: #f8fafc;
+  color: #1e293b;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.container-xxl {
+  max-width: 1400px;
+}
+
+/* =====================================================
+   GLOBAL HELPERS
+===================================================== */
+.bg-grey {
+  background-color: #f8fafc;
+}
+
+.text-slate {
   color: #1e293b;
 }
 
-header {
-  background-color: #ffffff;
-  opacity: 0.9;
-  border-bottom-color: #e2e8f0;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.text-primary {
+  color: #006717 !important;
 }
 
-.transition-all-300 {
+.fw-extrabold {
+  font-weight: 800;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+.Main-Header {
+  display: flex;
+  height: 80px;
+  transition: all 0.3s ease;
+  position: relative;
+  /* light-theme glass that actually shows */
+  background: rgba(248, 250, 252, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* edge contrast (THIS is what was missing) */
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  /* soft floating depth */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* glossy shine line */
+.Main-Header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.Main-Header.scrolled {
+  height: 50px;
+  background: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.Hero-Banner {
+  background-color: rgba(0, 103, 23, 0.05);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50px;
+}
+
+.logo-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.logo-box img {
+  height: 100%;
+}
+
+.scrolled .logo-box {
+  height: 40px;
+}
+
+.nav-link-custom {
+  text-decoration: none;
+  color: #475569;
+  transition: color 0.3s ease;
+}
+.nav-link-custom:hover {
+  color: #006717;
+}
+
+.sign-in {
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #006717;
+  background: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sign-in:hover {
+  transform: translateY(-1px);
+  /* lifts button up */
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sign-up {
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #006717;
+  background-color: #006717;
+  transition: all 0.3s;
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sign-up:hover {
+  transform: translateY(-1px);
+  /* lifts button up */
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================
+   Hero Banner
+====================================================*/
+.Hero-Title {
+  color: #0f172a;
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.Hero-Title span {
+  color: #006717;
+  font-weight: 700;
+}
+
+.Hero-subTitle {
+  font-size: 25px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.hero-primary-container {
+  height: 505px;
+  width: 505px;
+  transform: rotate(7deg);
+  border-radius: 30px;
+  background-color: #cee0d4;
+  overflow: hidden;
+}
+
+.hero-secondary-container {
+  height: 505px;
+  width: 505px;
+  transform: rotate(-7deg);
+  border-radius: 30px;
+  background-color: rgba(0, 103, 23, 0.05);
+}
+
+.hero-primary-container img {
+  height: 690px;
+}
+
+/* =====================================================
+   BUTTON / HOVER EFFECTS
+===================================================== */
+.lift {
   transition: all 0.3s ease;
 }
-
-.outer-div-1 {
-  height: 5rem;
+.lift:hover {
+  transform: translateY(-6px);
 }
 
-.outer-div-2 {
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 103, 23, 0.3);
-  background-color: #006717;
+.shadow-primary {
+  box-shadow: 0 16px 32px rgba(0, 103, 23, 0.3);
 }
 
-.outer-div-2 span {
-  font-size: 24px;
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+.object-fit-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.Logo.text {
-  color: #0f172a;
-}
-
-.Logo-subText {
-  color: #006717;
-  font-size: 11px;
-}
-
-.Search-Bar {
-  display: none;
-  width: 280px;
-}
-
-.searchBar-icon {
-  color: #94a3b8;
-  pointer-events: none;
-  transition: color 0.2s ease-in-out;
-}
-
-.search-group:focus-within .searchBar-icon {
+/* =====================================================
+   CARDS
+===================================================== */
+.featured-title {
+  font-size: 30px;
+  font-weight: 700;
   color: #006717;
 }
 
-.searchBar-icon span {
-  font-size: 20px;
+.featured-subheader {
+  font-weight: 600;
+  color: #64748b;
 }
 
-.SearchBar-textarea:focus {
+/* TABS */
+.featured-nav .nav-tabs {
+  border-bottom: 1px solid #e2e8f0;
+  gap: 28px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+.featured-nav .nav-link {
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.featured-nav .nav-link:hover {
+  color: #006717;
+}
+.featured-nav .nav-link.active {
+  color: #006717;
+  border-bottom-color: #006717;
+  background: transparent;
+}
+
+.cardCourse {
+  filter: grayscale(0.8);
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: all 0.25s ease-in;
+}
+.cardCourse .box-body {
+  padding: 13px;
+}
+.cardCourse .courseImage {
+  width: 100%;
+  height: 136px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.cardCourse .courseImage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cardCourse .courseImage .credentialMode {
+  border-bottom-right-radius: 4px;
+  line-height: normal;
+}
+.cardCourse .courseImage .credentialMode small {
+  line-height: 21px;
+  font-size: 10px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.6px;
+}
+.cardCourse .courseImage img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cardCourse .courseImage input[type=checkbox] {
+  right: 7px;
+  top: 5px;
+}
+.cardCourse .spanCourseName {
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  transition: all 0.5s ease-in;
+}
+.cardCourse .spanCredits {
+  font-size: 12px;
+  color: #98a6ad !important;
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+}
+.cardCourse:hover {
+  filter: grayscale(0);
+  border-color: #6777ef;
+}
+
+.cardCourse:has(input:checked) {
+  filter: grayscale(0);
+  border-color: #6777ef;
+}
+
+/* =====================================================
+   HOW IT WORKS (STEPS)
+===================================================== */
+.step-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #006717;
+  font-size: 1.75rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.step-icon:hover {
   border-color: #006717;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 103, 23, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 103, 23, 0.2);
 }
 
-.SearchBar-textarea {
-  transition: all 0.2s ease-in-out;
-}
-
-.SearchBar-textarea::-moz-placeholder {
-  color: #94a3b8;
-  opacity: 1;
-}
-
-.SearchBar-textarea::placeholder {
-  color: #94a3b8;
-  opacity: 1;
-}
-
-.Nav-Links {
-  color: #475569;
-}
-
-.Nav-Links a:hover {
-  color: #006717;
-}
-
-.Sign-In-btn {
-  background-color: #0f172a;
-  color: #ffffff;
-}
-
-.Sign-In-btn:hover {
-  background-color: #1e293b;
-}
-
-.hero-outer-div-1 {
-  background-color: #f8fafc;
-}
-
-.hero-outer-div-2 {
-  max-width: 1400px;
-}
-
-.Hero-Top-Tagline {
-  background-color: rgba(0, 103, 23, 0.1);
-  color: #006717;
-  font-size: x-small;
-}
-
-.Hero-Main-Title {
-  color: #0f172a;
-}
-
-.Hero-main-title-2 {
-  color: #006717;
-}
-
-.Hero-sub-title {
-  color: #475569;
-}
-
-.Explore-btn {
-  background-color: #006717;
-  color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 103, 23, 0.3);
-  transition: all 0.2s ease-in-out;
-  transform: translateZ(0);
-}
-
-.Explore-btn:hover {
-  transform: translateY(-0.125rem);
-}
-
-.Watch-Video-btn {
-  color: #334155;
-  transition: color 0.2s ease-in-out;
-}
-
-.Watch-Video-btn:hover {
-  color: #006717;
-}
-
-.hero-img-outer-div-1 {
-  width: 64px;
-  height: 64px;
-  background-color: rgba(0, 103, 23, 0.5);
-}
-
-.hero-img-outer-div-2 {
-  width: 64px;
-  height: 64px;
-  background-color: rgba(99, 102, 241, 0.5);
-}
-
-.Hero-Img {
-  border-color: #e2e8f0;
-  height: 400px;
-}
-
-#explore-credentials {
-  background-color: #ffffff;
-  border-color: #e2e8f0;
-}
-
-.explore-credentials-outer-div-1 {
-  max-width: 1400px;
-}
-
-.Microcredentials-Title {
-  color: #0f172a;
-}
-
-.Microcredentials-subTitle {
-  font-size: x-small;
-  color: #64748b;
-}
-
-.Credentials-btn {
-  background-color: #ffffff;
-  color: #006717;
-}
-
-.Collections-btn, .Pathways-btn {
-  color: #475569;
-  transition: color 0.2s ease-in-out;
-}
-
-.Collections-btn,
-.Pathways-btn :hover {
-  color: #0f172a;
-}
-
-.Featured-Credentials {
-  color: #0f172a;
-}
-
-.Filter-List-icon {
-  color: #006717;
-}
-
-.View-Credentials {
-  color: #006717;
-  transition: color 0.2s ease-in-out;
-}
-
-.View-Credentials:hover {
-  text-decoration: underline;
-}
-
-.Microcredentials-Card-1 {
-  background-color: #ffffff;
-  border-color: #e2e8f0;
-  transition: all 0.3s ease-in-out;
-}
-
-.Microcredentials-Card-1:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.Microcredentials-inner-div {
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+.avatar {
+  width: 48px;
   height: 48px;
-  background-color: #f1f5f9;
-}
-
-.Microcredentials-Card-1-img {
-  transition: transform 0.7s ease-in-out;
-}
-
-.Microcredentials-Card-1-img:hover {
-  transform: scale(1.05);
-}
-
-.Microcredentials-Card-1-bottom-div-1 {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
-}
-
-.Microcredentials-Card-1-innerSpan {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
-  font-size: x-small;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
-
-.Microcredentials-Card-1-innercontent-Title {
-  color: #0f172a;
-  transition: color 0.2s ease-in-out;
-}
-
-.Microcredentials-Card-1-innercontent-Title:hover {
-  color: #006717;
-}
-
-.Microcredentials-Card-1-innercontent-subTitle {
-  color: #64748b;
-  font-size: small;
-}
-
-.Microcredentials-Card-1-innercontent-Sliderlables {
-  font-size: x-small;
-  color: #64748b;
-}
-
-.Microcredentials-Card-1-innercontent-Slider {
-  height: 0.375rem;
-}
-
-.Microcredentials-Card-1-innercontent-Slider-1 {
+.avatar.primary {
   background-color: #006717;
 }
-
-.Microcredentials-Card-1-innercontent-Slider-2 {
-  background-color: rgba(0, 103, 23, 0.3);
+.avatar.success {
+  background-color: #10b981;
+}
+.avatar.purple {
+  background-color: #a855f7;
 }
 
-.Microcredentials-Card-1-innercontent-Slider-3,
-.Microcredentials-Card-1-innercontent-Slider-4 {
-  background-color: #f1f5f9;
+/* =====================================================
+   CTA SECTION
+===================================================== */
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.1);
 }
 
-@media (width >= 80rem) {
-  .Search-Bar {
-    width: 420px;
-  }
-  .hamburger {
-    color: #475569;
-    display: none;
-  }
-  .hamburger:hover {
-    color: #006717;
-  }
-  .hero-outer-div-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.bg-glass {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer a {
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */

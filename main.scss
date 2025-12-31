@@ -1,319 +1,497 @@
 @use "colors";
-@use "component";
 
-body {
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.lato-light-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+/* =====================================================
+   BASE
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: "Lato", sans-serif;
   background-color: colors.$slate-50;
   color: colors.$slate-800;
+  margin: 0;
+  overflow-y: auto;
 }
 
-header {
-  background-color: colors.$white;
-  opacity: 0.9;
-  border-bottom-color: colors.$slate-200;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.transition-all-300 {
-  transition: all 0.3s ease;
-}
-
-.outer-div-1 {
-  height: 5rem;
-}
-
-.outer-div-2 {
-  color: colors.$white;
-  box-shadow: 0 4px 12px rgba(colors.$custom-primary, 0.3);
-  background-color: colors.$custom-primary;
-}
-
-.outer-div-2 span{
-  font-size: 24px;
-}
-
-.Logo.text {
-  color: colors.$slate-900;
-}
-
-.Logo-subText {
-  color: colors.$custom-primary;
-  font-size: 11px;
-}
-
-.Search-Bar{
-  display: none;
-  width: 280px;
-}
-
-.searchBar-icon{
-  color: colors.$slate-400;
-  pointer-events: none;
-  transition: color 0.2s ease-in-out;
-}
-
-.search-group:focus-within .searchBar-icon {
-  color: colors.$custom-primary;
-}
-
-
-.searchBar-icon span{
-  font-size: 20px;
-}
-
-
-.SearchBar-textarea:focus {
-  border-color: colors.$custom-primary;
-  background-color: colors.$white;
-  box-shadow: 0 0 0 0.2rem rgba(colors.$custom-primary, 0.2);
-}
-
-
-.SearchBar-textarea {
-  transition: all 0.2s ease-in-out;
-}
-
-.SearchBar-textarea::placeholder {
-  color: colors.$slate-400;
-  opacity: 1;
-}
-
-.Nav-Links{
-  color: colors.$slate-600;
-}
-
-.Nav-Links a:hover{
-  color: colors.$custom-primary;
-}
-
-.Sign-In-btn{
-  background-color: colors.$slate-900;
-  color: colors.$white;
-
-}
-
-.Sign-In-btn:hover{
-  background-color: colors.$slate-800;
-}
-
-.hero-outer-div-1{
-  background-color: colors.$slate-50;
-}
-.hero-outer-div-2 {
+.container-xxl {
   max-width: 1400px;
 }
 
-.Hero-Top-Tagline{
-  background-color:rgba(colors.$custom-primary, 0.1);
+/* =====================================================
+   GLOBAL HELPERS
+===================================================== */
 
-  color: colors.$custom-primary;
-  font-size: x-small;
-}
-
-.Hero-Main-Title{
-  color: colors.$slate-900;
-}
-.Hero-main-title-2{
-  color: colors.$custom-primary;
+.bg-grey {
+  background-color: colors.$slate-50;
 }
 
-.Hero-sub-title{
-  color: colors.$slate-600;
+.text-slate {
+  color: colors.$slate-800;
 }
 
-.Explore-btn{
-background-color: colors.$custom-primary;
-color: colors.$white;
- box-shadow: 0 4px 16px rgba(colors.$custom-primary, 0.3);
- transition: all 0.2s ease-in-out;
-  transform: translateZ(0);
+.text-primary {
+  color: colors.$custom-primary !important;
 }
 
-.Explore-btn:hover{
-   transform: translateY(-0.125rem);
+.fw-extrabold {
+  font-weight: 800;
 }
 
-.Watch-Video-btn{
-  color: colors.$slate-700;
-  transition: color 0.2s ease-in-out;
+/* =====================================================
+   HEADER
+===================================================== */
+.Main-Header {
+  display: flex;
+  height: 80px;
+  transition: all 0.3s ease;
+  position: relative;
+
+  /* light-theme glass that actually shows */
+  background: rgba(248, 250, 252, 0.75); // slate-50 tint
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* edge contrast (THIS is what was missing) */
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+
+  /* soft floating depth */
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
-.Watch-Video-btn:hover{
-  color: colors.$custom-primary;
+/* glossy shine line */
+.Main-Header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent);
 }
 
-.hero-img-outer-div-1{
-  width: 64px;
-  height: 64px;
-  background-color:rgba(colors.$custom-primary, 0.5);
-}
-.hero-img-outer-div-2{
-  width: 64px;
-  height: 64px;
-  background-color:rgba(colors.$indigo-500, 0.5);
+.Main-Header.scrolled {
+  height: 50px;
+
+  background: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
-.Hero-Img{
-  border-color: colors.$slate-200;
-  height: 400px;
-}
 
-#explore-credentials{
-  background-color: colors.$white;
-  border-color: colors.$slate-200;
-}
-
-.explore-credentials-outer-div-1{
-max-width: 1400px;
-}
-.Microcredentials-Title{
-  color: colors.$slate-900;
-}
-
-.Microcredentials-subTitle{
-  font-size: x-small;
-  color: colors.$slate-500;
-}
-
-.Credentials-btn{
-  background-color: colors.$white;
-  color: colors.$custom-primary;
-}
-
-.Collections-btn, .Pathways-btn{
-  color: colors.$slate-600;
-  transition: color 0.2s ease-in-out;
-}
-.Collections-btn,
-.Pathways-btn
-:hover{
-  color: colors.$slate-900;
-}
-
-.Featured-Credentials{
-  color: colors.$slate-900;
-}
-.Filter-List-icon{
-  color: colors.$custom-primary;
-}
-
-.View-Credentials{
-  color: colors.$custom-primary;
-  transition: color 0.2s ease-in-out;
-}
-
-.View-Credentials:hover{
-  text-decoration: underline;
-}
-
-.Microcredentials-Card-1{
-  background-color: colors.$white;
-  border-color: colors.$slate-200;
-  transition: all 0.3s ease-in-out;
-}
-.Microcredentials-Card-1:hover{
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.Microcredentials-inner-div{
-  height: 48px;
-  background-color:colors.$slate-100;
-}
-
-.Microcredentials-Card-1-img{
-  transition: transform 0.7s ease-in-out;
-
-}
-
-.Microcredentials-Card-1-img:hover{
-   transform: scale(1.05);
-}
-
-.Microcredentials-Card-1-bottom-div-1{
-   background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.4),
-    transparent
-  );
-}
-
-.Microcredentials-Card-1-innerSpan{
-  background-color:rgba(colors.$white, 0.2);
-  border-color: rgba(colors.$white, 0.3);
-  color: colors.$white;
-  font-size: x-small;
-   backdrop-filter: blur(12px);
+.Hero-Banner {
+  background-color: rgba(colors.$custom-primary, 0.05);
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(12px);
-}
-
-.Microcredentials-Card-1-innercontent-Title{
-  color: colors.$slate-900;
-  transition: color 0.2s ease-in-out;
-}
-
-.Microcredentials-Card-1-innercontent-Title:hover{
-  color: colors.$custom-primary;
-}
-.Microcredentials-Card-1-innercontent-subTitle{
-  color: colors.$slate-500;
-  font-size: small;
-}
-
-.Microcredentials-Card-1-innercontent-Sliderlables{
-  font-size: x-small;
-  color: colors.$slate-500;
-}
-
-.Microcredentials-Card-1-innercontent-Slider{
-  height: 0.375rem;
-}
-
-.Microcredentials-Card-1-innercontent-Slider-1{
-  background-color: colors.$custom-primary;
-}
-
-.Microcredentials-Card-1-innercontent-Slider-2{
-  background-color: rgba(colors.$custom-primary,0.3);
-}
-
-.Microcredentials-Card-1-innercontent-Slider-3,
-.Microcredentials-Card-1-innercontent-Slider-4
-{
-  background-color: colors.$slate-100;
+  border-radius: 50px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (width >= 80rem) { 
-.Search-Bar{
-  width: 420px;
+.logo-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
 }
-.hamburger{
+
+.logo-box img {
+  height: 100%;
+}
+
+.scrolled .logo-box {
+  height: 40px;
+}
+
+
+.nav-link-custom {
+  text-decoration: none;
   color: colors.$slate-600;
-  display:none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: colors.$custom-primary;
+  }
 }
-.hamburger:hover{
+
+.sign-in {
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: colors.$custom-primary;
+  background: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sign-in:hover {
+  transform: translateY(-1px);
+  /* lifts button up */
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.sign-up {
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: colors.$custom-primary;
+  background-color: colors.$custom-primary;
+  transition: all 0.3s;
+  color: colors.$white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sign-up:hover {
+  transform: translateY(-1px);
+  /* lifts button up */
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+
+}
+
+/* =====================================================
+   Hero Banner
+====================================================*/
+
+.Hero-Title {
+  color: colors.$secondary;
+  font-size: 70px;
+  font-weight: 700;
+
+}
+
+.Hero-Title span {
+  color: colors.$custom-primary;
+  font-weight: 700;
+}
+
+.Hero-subTitle {
+  font-size: 25px;
+  color: colors.$slate-600;
+  font-weight: 600;
+}
+
+.hero-primary-container {
+  height: 505px;
+  width: 505px;
+  transform: rotate(7deg);
+  border-radius: 30px;
+  background-color: colors.$green-50;
+  overflow: hidden;
+}
+
+.hero-secondary-container {
+  height: 505px;
+  width: 505px;
+  transform: rotate(-7deg);
+  border-radius: 30px;
+  background-color: rgba(colors.$custom-primary, 0.05);
+
+
+}
+
+.hero-primary-container img {
+  height: 690px;
+}
+
+
+
+/* =====================================================
+   BUTTON / HOVER EFFECTS
+===================================================== */
+
+.lift {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+
+.shadow-primary {
+  box-shadow: 0 16px 32px rgba(colors.$custom-primary, 0.3);
+}
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+.featured-title {
+  font-size: 30px;
+  font-weight: 700;
   color: colors.$custom-primary;
 }
-.hero-outer-div-2 {
-    grid-template-columns: repeat(2, 1fr);
+
+.featured-subheader {
+  font-weight: 600;
+  color: colors.$slate-500;
+}
+
+/* TABS */
+.featured-nav {
+  .nav-tabs {
+    border-bottom: 1px solid colors.$slate-200;
+    gap: 28px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
- }
+
+  .nav-link {
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+    font-weight: 600;
+    color: colors.$slate-500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+
+    &:hover {
+      color: colors.$custom-primary;
+    }
+
+    &.active {
+      color: colors.$custom-primary;
+      border-bottom-color: colors.$custom-primary;
+      background: transparent;
+    }
+  }
+}
+
+ 
+  .cardCourse {
+    filter: grayscale(.8);
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: all .25s ease-in;
+
+    .box-body {
+      padding: 13px;
+    }
+
+    .courseImage {
+      width: 100%;
+      height: 136px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .credentialMode {
+        border-bottom-right-radius: 4px;
+        line-height: normal;
+
+        small {
+          line-height: 21px;
+          font-size: 10px;
+          color: rgb(255, 255, 255);
+          letter-spacing: 0.6px;
+        }
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      input[type="checkbox"] {
+        right: 7px;
+        top: 5px;
+      }
+    }
+
+    .spanCourseName {
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      display: block;
+      transition: all .5s ease-in;
+    }
+
+    .spanCredits {
+      font-size: 12px;
+      color: #98a6ad !important;
+      display: block;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    &:hover {
+      filter: grayscale(0);
+      border-color: #6777ef;
+    }
+  }
+
+
+.cardCourse:has(input:checked) {
+  filter: grayscale(0);
+  border-color: #6777ef;
+}
+
+
+/* =====================================================
+   HOW IT WORKS (STEPS)
+===================================================== */
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: colors.$white;
+  border: 2px solid colors.$slate-100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: colors.$custom-primary;
+  font-size: 1.75rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: colors.$custom-primary;
+    box-shadow: 0 12px 24px rgba(colors.$custom-primary, 0.2);
+  }
+}
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: colors.$white;
+
+  &.primary {
+    background-color: colors.$custom-primary;
+  }
+
+  &.success {
+    background-color: colors.$emerald-600;
+  }
+
+  &.purple {
+    background-color: colors.$purple-500;
+  }
+}
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(colors.$secondary, 0.1);
+}
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer a {
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: colors.$white;
+  }
+}
