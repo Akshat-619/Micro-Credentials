@@ -575,7 +575,9 @@ box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
   left: 10%;
   right: 10%;
   height: 2px;
-  background-color: colors.$slate-200;
+  border: 1px solid colors.$custom-primary;
+  border-style: dotted;
+    animation: glow 2s infinite ease-in-out;
 
   z-index: 0;
   pointer-events: none;
@@ -664,5 +666,17 @@ footer a {
 
   &:hover {
     color: colors.$white;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 1px colors.$custom-primary;
+  }
+  50% {
+    box-shadow: 0 0 2px colors.$custom-primary;
+  }
+  100% {
+    box-shadow: 0 0 1px colors.$custom-primary;
   }
 }
