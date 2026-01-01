@@ -183,6 +183,9 @@ body, html {
 
   &:hover {
     color: colors.$custom-primary;
+    padding: 5px;
+    background-color: rgba(colors.$purple-200, 0.08);
+    margin: 0;
   }
 }
 
@@ -222,6 +225,206 @@ body, html {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 
 
+}
+
+/*Post Signup btns*/
+.nav-icon-color{
+  border-color: colors.$custom-primary;
+}
+
+.user-dropdown-menu {
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 12px;
+
+  background-color: colors.$white;
+  border: 1px solid colors.$slate-200;
+
+  box-shadow:
+    0 8px 24px colors.$shadow-dark,
+    0 2px 6px colors.$shadow-primary;
+
+  animation: dropdownFade 0.18s ease-out;
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 12px;
+    border-radius: 8px;
+
+    font-weight: 500;
+    color: colors.$slate-700;
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+
+    i {
+      font-size: 16px;
+      color: colors.$slate-500;
+      transition: color 0.25s ease;
+    }
+
+    &:hover {
+      background-color: colors.$green-50;
+      color: colors.$custom-primary;
+
+      i {
+        color: colors.$custom-primary;
+      }
+    }
+  }
+
+  .dropdown-divider {
+    margin: 6px 0;
+    border-color: colors.$slate-200;
+  }
+
+  /* Logout – still subtle, not aggressive */
+  .logout {
+    color: colors.$slate-700;
+
+    &:hover {
+      background-color: colors.$slate-100;
+      color: colors.$primary-dark;
+    }
+  }
+}
+
+.wishlist-dropdown-menu {
+  min-width: 240px;
+  padding: 8px;
+  border-radius: 12px;
+
+  background-color: colors.$white;
+  border: 1px solid colors.$slate-200;
+
+  box-shadow:
+    0 8px 24px colors.$shadow-dark,
+    0 2px 6px colors.$shadow-primary;
+
+  animation: dropdownFade 0.18s ease-out;
+
+  .wishlist-header {
+    padding: 8px 10px;
+    margin-bottom: 4px;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: colors.$slate-600;
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+
+    padding: 10px 12px;
+    border-radius: 8px;
+
+    font-weight: 500;
+    color: colors.$slate-700;
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+
+    i {
+      font-size: 15px;
+      color: colors.$slate-500;
+      transition: color 0.25s ease;
+    }
+
+    &:hover {
+      background-color: colors.$slate-100;
+      color: colors.$secondary;
+
+      i {
+        color: colors.$custom-primary;
+      }
+    }
+  }
+
+  .view-all {
+    text-align: center;
+    font-weight: 600;
+    color: colors.$custom-primary;
+
+    &:hover {
+      background-color: colors.$green-50;
+      color: colors.$primary-dark;
+    }
+  }
+
+  .dropdown-divider {
+    margin: 6px 0;
+    border-color: colors.$slate-200;
+  }
+}
+
+.notification-dropdown-menu {
+  min-width: 300px;
+  padding: 8px;
+  border-radius: 12px;
+
+  background-color: colors.$white;
+  border: 1px solid colors.$slate-200;
+
+  box-shadow:
+    0 8px 24px colors.$shadow-dark,
+    0 2px 6px colors.$shadow-primary;
+
+  animation: dropdownFade 0.18s ease-out;
+
+  .notification-header {
+    padding: 8px 10px;
+    margin-bottom: 4px;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: colors.$slate-600;
+  }
+
+  .dropdown-item {
+    padding: 10px 12px;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    color: colors.$slate-700;
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+
+    &:hover {
+      background-color: colors.$slate-100;
+      color: colors.$secondary;
+    }
+  }
+
+  /* Featured / important announcement */
+  .highlight {
+    background-color: colors.$green-50;
+    font-weight: 600;
+
+    &:hover {
+      background-color: colors.$slate-100;
+    }
+  }
+
+  .view-all {
+    text-align: center;
+    font-weight: 600;
+    color: colors.$custom-primary;
+
+    &:hover {
+      background-color: colors.$green-50;
+      color: colors.$primary-dark;
+    }
+  }
+
+  .dropdown-divider {
+    margin: 6px 0;
+    border-color: colors.$slate-200;
+  }
 }
 
 /* =====================================================

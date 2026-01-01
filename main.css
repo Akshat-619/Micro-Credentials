@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* =====================================================
    BRAND COLORS
 ===================================================== */
@@ -184,6 +185,9 @@ body, html {
 }
 .nav-link-custom:hover {
   color: #006717;
+  padding: 5px;
+  background-color: rgba(233, 213, 255, 0.08);
+  margin: 0;
 }
 
 .sign-in {
@@ -218,6 +222,157 @@ body, html {
   transform: translateY(-1px);
   /* lifts button up */
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*Post Signup btns*/
+.nav-icon-color {
+  border-color: #006717;
+}
+
+.user-dropdown-menu {
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 103, 23, 0.3);
+  animation: dropdownFade 0.18s ease-out;
+  /* Logout – still subtle, not aggressive */
+}
+.user-dropdown-menu .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #334155;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.user-dropdown-menu .dropdown-item i {
+  font-size: 16px;
+  color: #64748b;
+  transition: color 0.25s ease;
+}
+.user-dropdown-menu .dropdown-item:hover {
+  background-color: #cee0d4;
+  color: #006717;
+}
+.user-dropdown-menu .dropdown-item:hover i {
+  color: #006717;
+}
+.user-dropdown-menu .dropdown-divider {
+  margin: 6px 0;
+  border-color: #e2e8f0;
+}
+.user-dropdown-menu .logout {
+  color: #334155;
+}
+.user-dropdown-menu .logout:hover {
+  background-color: #f1f5f9;
+  color: #0f2313;
+}
+
+.wishlist-dropdown-menu {
+  min-width: 240px;
+  padding: 8px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 103, 23, 0.3);
+  animation: dropdownFade 0.18s ease-out;
+}
+.wishlist-dropdown-menu .wishlist-header {
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+.wishlist-dropdown-menu .dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #334155;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.wishlist-dropdown-menu .dropdown-item i {
+  font-size: 15px;
+  color: #64748b;
+  transition: color 0.25s ease;
+}
+.wishlist-dropdown-menu .dropdown-item:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+.wishlist-dropdown-menu .dropdown-item:hover i {
+  color: #006717;
+}
+.wishlist-dropdown-menu .view-all {
+  text-align: center;
+  font-weight: 600;
+  color: #006717;
+}
+.wishlist-dropdown-menu .view-all:hover {
+  background-color: #cee0d4;
+  color: #0f2313;
+}
+.wishlist-dropdown-menu .dropdown-divider {
+  margin: 6px 0;
+  border-color: #e2e8f0;
+}
+
+.notification-dropdown-menu {
+  min-width: 300px;
+  padding: 8px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 103, 23, 0.3);
+  animation: dropdownFade 0.18s ease-out;
+  /* Featured / important announcement */
+}
+.notification-dropdown-menu .notification-header {
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+.notification-dropdown-menu .dropdown-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #334155;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.notification-dropdown-menu .dropdown-item:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+.notification-dropdown-menu .highlight {
+  background-color: #cee0d4;
+  font-weight: 600;
+}
+.notification-dropdown-menu .highlight:hover {
+  background-color: #f1f5f9;
+}
+.notification-dropdown-menu .view-all {
+  text-align: center;
+  font-weight: 600;
+  color: #006717;
+}
+.notification-dropdown-menu .view-all:hover {
+  background-color: #cee0d4;
+  color: #0f2313;
+}
+.notification-dropdown-menu .dropdown-divider {
+  margin: 6px 0;
+  border-color: #e2e8f0;
 }
 
 /* =====================================================
