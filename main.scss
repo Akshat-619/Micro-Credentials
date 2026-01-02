@@ -1,64 +1,95 @@
 @use "colors";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-.lato-thin {
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
 
-.lato-light {
-  font-family: "Lato", sans-serif;
+/* Open Sans – Light */
+.open-sans-light {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
-.lato-regular {
-  font-family: "Lato", sans-serif;
+/* Open Sans – Regular */
+.open-sans-regular {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Open Sans – Medium */
+.open-sans-medium {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Open Sans – Semi Bold */
+.open-sans-semibold {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Open Sans – Bold */
+.open-sans-bold {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Open Sans – Extra Bold */
+.open-sans-extrabold {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+
+/* Montserrat – Regular text */
+.montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 
-.lato-bold {
-  font-family: "Lato", sans-serif;
+/* Montserrat – Medium */
+.montserrat-medium {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Montserrat – Semi Bold */
+.montserrat-semibold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Montserrat – Bold */
+.montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
 }
 
-.lato-black {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.lato-thin-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.lato-light-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.lato-regular-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.lato-bold-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.lato-black-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
 
 
 /* =====================================================
@@ -70,8 +101,8 @@
 }
 
 body, html {
-  font-family: "Lato", sans-serif;
-  background-color: colors.$slate-50;
+   font-family: "Open Sans", sans-serif;
+  background-color: colors.$white;
   color: colors.$slate-800;
   margin: 0;
   overflow-y: auto;
@@ -94,7 +125,7 @@ body, html {
 }
 
 .text-primary {
-  color: colors.$custom-primary !important;
+  color: colors.$primary !important;
 }
 
 .fw-extrabold {
@@ -109,58 +140,88 @@ body, html {
   height: 80px;
   transition: all 0.3s ease;
   position: relative;
-
-  /* light-theme glass that actually shows */
-  background: rgba(248, 250, 252, 0.75); // slate-50 tint
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  /* edge contrast (THIS is what was missing) */
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-
-  /* soft floating depth */
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+ 
 }
 
-/* glossy shine line */
-.Main-Header::before {
-  content: "";
+/* Mega Menu-Categories */
+
+/* MEGA MENU BASE */
+.mega-menu-parent {
+  position: relative;
+}
+
+/* MEGA MENU PANEL */
+.mega-menu {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 1px;
-  width: 100%;
-  background: linear-gradient(to right,
-      transparent,
-      rgba(255, 255, 255, 0.8),
-      transparent);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 900px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 1000;
 }
 
-.Main-Header.scrolled {
-  height: 50px;
-
-  background: rgba(248, 250, 252, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+/* GRID */
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
 }
+
+/* COLUMN */
+.mega-col h6 {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: colors.$primary;
+}
+
+.mega-col a {
+  display: block;
+  font-size: 14px;
+  padding: 6px 0;
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mega-col a:hover {
+  color: colors.$slate-900;
+}
+
+/* SHOW ON HOVER */
+.mega-menu-parent:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(6px);
+}
+
+
+
+
+
+
+
+
 
 
 .Hero-Banner {
-  background-color: rgba(colors.$custom-primary, 0.05);
+  background-color: rgba(colors.$primary-light, 0.2);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(12px);
-  border-radius: 50px;
+  border-radius: 30px;
 }
 
 
 .logo-box {
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,65 +232,77 @@ body, html {
   height: 100%;
 }
 
-.scrolled .logo-box {
-  height: 40px;
+
+
+.Navbar ul li{
+  padding: 0px 16px;
 }
+
+
 
 
 .nav-link-custom {
   text-decoration: none;
-  color: colors.$slate-600;
-  transition: color 0.3s ease;
+color: colors.$black;
+  font-weight: 600;
+  font-size: 16px;
+   text-transform: uppercase;        
+  background-color: transparent;
+
+  transition: 
+    color 0.3s ease,
+    background-color 1 ease-in-out;
 
   &:hover {
-    color: colors.$custom-primary;
-    padding: 5px;
-    background-color: rgba(colors.$purple-200, 0.08);
-    margin: 0;
+    color: colors.$primary;
+    
   }
+  .nav-link-custom:hover {
+  background-color: rgba(colors.$primary, 0.12);
+  box-shadow: inset 0 0 0 1px colors.$primary;
 }
 
-.sign-in {
-  padding: 10px 15px 10px 15px;
-  border-radius: 5px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: colors.$custom-primary;
-  background: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.sign-in:hover {
-  transform: translateY(-1px);
-  /* lifts button up */
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-}
-
 
 
 .sign-up {
-  padding: 10px 15px 10px 15px;
-  border-radius: 5px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: colors.$custom-primary;
-  background-color: colors.$custom-primary;
+background: colors.$primary 0% 0% no-repeat padding-box;
+border-radius: 24px;
+opacity: 1;
+padding: 14px 24px ;
+color: colors.$white;
+text-decoration: none;
+font-size: 16px;
+line-height: normal;
+text-transform: uppercase;
+
+
+}
+
+.nav-link-custom{
+  position: relative;
+}
+
+.nav-link-custom::after{
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 0px;
+  background-color: colors.$primary;
+  bottom: 0;
+  left: 0;
   transition: all 0.3s;
-  color: colors.$white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.sign-up:hover {
-  transform: translateY(-1px);
-  /* lifts button up */
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-
-
+  .nav-link-custom:hover::after{
+width: 100%;
 }
+  
+
+
 
 /*Post Signup btns*/
 .nav-icon-color{
-  border-color: colors.$custom-primary;
+  color: colors.$primary;
 }
 
 .user-dropdown-menu {
@@ -254,23 +327,23 @@ body, html {
     padding: 10px 12px;
     border-radius: 8px;
 
-    font-weight: 500;
+    font-weight: 600;
     color: colors.$slate-700;
 
     transition: background-color 0.25s ease, color 0.25s ease;
 
     i {
       font-size: 16px;
-      color: colors.$slate-500;
+      color: colors.$primary;
       transition: color 0.25s ease;
     }
 
     &:hover {
-      background-color: colors.$green-50;
-      color: colors.$custom-primary;
+      background-color: rgba(colors.$primary, 0.7);
+      color: colors.$white;
 
       i {
-        color: colors.$custom-primary;
+        color: colors.$white;
       }
     }
   }
@@ -285,8 +358,8 @@ body, html {
     color: colors.$slate-700;
 
     &:hover {
-      background-color: colors.$slate-100;
-      color: colors.$primary-dark;
+     background-color: rgba(colors.$primary, 0.7);
+      color: colors.$white;
     }
   }
 }
@@ -309,9 +382,9 @@ body, html {
     padding: 8px 10px;
     margin-bottom: 4px;
 
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
-    color: colors.$slate-600;
+    color: colors.$primary;
   }
 
   .dropdown-item {
@@ -328,16 +401,16 @@ body, html {
 
     i {
       font-size: 15px;
-      color: colors.$slate-500;
+      color: colors.$primary;
       transition: color 0.25s ease;
     }
 
     &:hover {
-      background-color: colors.$slate-100;
-      color: colors.$secondary;
+      background-color: rgba(colors.$primary, 0.7);
+      color: colors.$white;
 
       i {
-        color: colors.$custom-primary;
+        color: colors.$white;
       }
     }
   }
@@ -345,11 +418,11 @@ body, html {
   .view-all {
     text-align: center;
     font-weight: 600;
-    color: colors.$custom-primary;
+    color: colors.$slate-700;
 
     &:hover {
-      background-color: colors.$green-50;
-      color: colors.$primary-dark;
+      background-color: rgba(colors.$primary, 0.7);
+      color: colors.$white;
     }
   }
 
@@ -377,9 +450,9 @@ body, html {
     padding: 8px 10px;
     margin-bottom: 4px;
 
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
-    color: colors.$slate-600;
+    color: colors.$primary;
   }
 
   .dropdown-item {
@@ -395,29 +468,22 @@ body, html {
     transition: background-color 0.25s ease, color 0.25s ease;
 
     &:hover {
-      background-color: colors.$slate-100;
-      color: colors.$secondary;
+     background-color: rgba(colors.$primary, 0.7);
+      color: colors.$white;
     }
   }
 
-  /* Featured / important announcement */
-  .highlight {
-    background-color: colors.$green-50;
-    font-weight: 600;
 
-    &:hover {
-      background-color: colors.$slate-100;
-    }
-  }
+
 
   .view-all {
     text-align: center;
     font-weight: 600;
-    color: colors.$custom-primary;
+    color: colors.$slate-700;
 
     &:hover {
-      background-color: colors.$green-50;
-      color: colors.$primary-dark;
+     background-color: rgba(colors.$primary, 0.7);
+      color: colors.$white;
     }
   }
 
@@ -432,21 +498,69 @@ body, html {
 ====================================================*/
 
 .Hero-Title {
-  color: colors.$secondary;
-  font-size: 70px;
-  font-weight: 700;
+  color: colors.$slate-900;
+  font-size: 50px;
+  letter-spacing: 0px;
+
 
 }
 
+.curve-line {
+  width: 700px;        /* control width */
+}
+
+.curve-line svg {
+   
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.curve-line path {
+  fill: none;
+  stroke: colors.$primary;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+
+
 .Hero-Title span {
-  color: colors.$custom-primary;
+  color: colors.$primary;
   font-weight: 700;
 }
 
 .Hero-subTitle {
-  font-size: 25px;
-  color: colors.$slate-600;
-  font-weight: 600;
+  font-size: 24px;
+  color: colors.$slate-900;
+
+}
+
+.enroll-btn{
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.enroll-btn:hover{
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  transform: translateY(-3px);
+}
+
+.enroll-btn a{
+padding: 14px 24px;
+border-radius: 24px;
+background-color: colors.$primary;
+color: colors.$white;
+text-decoration: none;
+}
+
+.demo-icon {
+  color: colors.$slate-900;
+  font-size: 1px;
+}
+
+.demo span{
+  font-size: 14px;
+  color: colors.$slate-900;
 }
 
 .hero-primary-container {
@@ -454,7 +568,7 @@ body, html {
   width: 505px;
   transform: rotate(7deg);
   border-radius: 30px;
-  background-color: colors.$green-50;
+  background-color: colors.$primary;
   overflow: hidden;
 }
 
@@ -463,7 +577,7 @@ body, html {
   width: 505px;
   transform: rotate(-7deg);
   border-radius: 30px;
-  background-color: rgba(colors.$custom-primary, 0.05);
+  background-color: rgba(colors.$primary, 0.4);
 
 
 }
@@ -487,7 +601,7 @@ body, html {
 }
 
 .shadow-primary {
-  box-shadow: 0 16px 32px rgba(colors.$custom-primary, 0.3);
+  box-shadow: 0 16px 32px rgba(colors.$primary, 0.3);
 }
 
 /* =====================================================
@@ -498,388 +612,3 @@ body, html {
   object-fit: cover;
 }
 
-/* =====================================================
-   CARDS
-===================================================== */
-.featured-title {
-  font-size: 30px;
-  font-weight: 700;
-  color: colors.$custom-primary;
-}
-
-.featured-subheader {
-  font-weight: 600;
-  color: colors.$slate-500;
-}
-
-/* TABS */
-.featured-title {
-  font-size: 30px;
-  font-weight: 700;
-  color: colors.$custom-primary;
-}
-
-.featured-subheader {
-  font-weight: 600;
-  color: colors.$slate-500;
-}
-
-.filter-icon{
-  color: colors.$custom-primary;
-  filter: brightness(-0.8);
-  
-}
-/* NAV TABS */
-.featured-nav {
-  .nav-tabs {
-    border-bottom: none;
-    gap: 12px;
-  }
-
-  .nav-link {
-    border: none;
-    background: transparent;
-    padding: 6px 2px;
-    font-weight: 600;
-    color: colors.$slate-500; // default slate
-    border-bottom: 2px solid transparent;
-    transition: all 0.25s ease;
-
-    &:hover {
-      color: colors.$custom-primary;
-    }
-
-    &.active,
-    &[aria-selected="true"] {
-      color: colors.$custom-primary;
-      border-bottom-color: colors.$custom-primary;
-      background: transparent;
-    }
-  }
-}
-
-.featuredCred-title{
-  color: colors.$custom-primary;
-  font-weight: 600;
-}
- 
-  .cardCourse {
-  
-    border: 1px solid #e3e3e3;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    transition: all .25s ease-in;
-
-    .box-body {
-      padding: 13px;
-    }
-
-    .courseImage {
-      width: 100%;
-      height: 136px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .credentialMode {
-        border-bottom-right-radius: 4px;
-        line-height: normal;
-
-        small {
-          line-height: 21px;
-          font-size: 10px;
-          color: rgb(255, 255, 255);
-          letter-spacing: 0.6px;
-        }
-      }
-
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
-
-      input[type="checkbox"] {
-        right: 7px;
-        top: 5px;
-      }
-    }
-
-    .spanCourseName {
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-      text-decoration: none;
-      color: colors.$custom-primary;
-      display: block;
-      transition: all .5s ease-in;
-    }
-
-    .spanCoursesubName{
-         font-weight: 600;
-          color: colors.$slate-600
-    }
-
-    .spanCredits {
-      font-size: 12px;
-      color: colors.$slate-600 !important;
-      display: block;
-      text-align: center;
-      margin-top: 6px;
-      font-weight: 700;
-    }
-
-    &:hover {
-      
-      border-color: colors.$custom-primary;
-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
-
-    }
-  }
-
-
-.cardCourse:has(input:checked) {
-  
-  border-color: colors.$custom-primary;
-}
-
-.spanCourseDuration{
-  color: colors.$secondary;
-  font-weight: 500;
-}
-
-.spanCourseCounts{
-  color: colors.$slate-600;
-  font-weight: 500;
-}
-
-.spanCourseDomain{
-  color: colors.$slate-600;
-  font-weight: 600;
-}
-
-.badge.badge-success {
-        vertical-align: middle;
-    padding: 7px 12px;
-    font-weight: 600;
-    letter-spacing: .3px;
-    border-radius: 30px;
-    color: colors.$custom-primary;
-    border: 1px solid colors.$custom-primary;
-    background-color: transparent ;
-        text-transform: uppercase;
-    font-size: 10px;
-    
-}
-
-
-
-/*Pathways*/
-
-.pathway-card-img{
-  width: 130px;
-  height: 130px;
-}
-
-.microcredentials-pathway {
-    .pathway-card {
-       
-        transition: all 0.25s ease-in;
-        
-
-        &:hover {
-          
-            border-color: colors.$custom-primary !important;
-            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-
-            cursor: pointer;
-
-            img {
-                transform: scale(1.05);
-            }
-
-            .edit-icon {
-                opacity: 1;
-            }
-        }
-
-        img {
-            transition: transform 0.3s ease;
-            height: 100%;
-        width: 100%;
-        }
-
-        .edit-icon {
-            opacity: 0.6;
-            transition: all 0.3s ease;
-
-            &:hover {
-                color: colors.$custom-primary !important;
-            }
-        }
-    }
-
-    .edit-icon-position {
-        top: 12px;
-        right: 12px;
-        z-index: 10;
-    }
-
-    .text-clamp {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .readMore{
-      color: colors.$custom-primary;
-     
-    }
-    .badge.badge-info{
-      color: colors.$custom-primary;
-      background: transparent;
-      border: 1px solid colors.$custom-primary;
-    }
-
-    .btnBuildPathway{
-      border: 1px solid colors.$custom-primary;
-      color: colors.$custom-primary;
-    }
-
-    .btnBuildPathway-icon{
-      color: colors.$custom-primary;
-    }
-
-    .btnBuildPathway:hover{
-      background-color: colors.$custom-primary;
-      color: colors.$white;
-      box-shadow: 0 50px 30px rgba(0, 0, 0, 0.12);
-
-    }
-}
-/* =====================================================
-   HOW IT WORKS 
-===================================================== */
-
-.how-steps-row {
-  padding-top: 32px;
-}
-
-
-.how-steps-connector {
-  position: absolute;
-  top: 90px; 
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  border: 1px solid colors.$custom-primary;
-  border-style: dotted;
-    animation: glow 2s infinite ease-in-out;
-
-  z-index: 0;
-  pointer-events: none;
-
- 
-  transition: none !important;
-  will-change: transform;
-}
-
-
-.step-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background-color: colors.$white;
-  border: 2px solid colors.$slate-100;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: colors.$custom-primary;
-  font-size: 1.75rem;
-
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: colors.$custom-primary;
-    box-shadow: 0 12px 24px rgba(colors.$custom-primary, 0.2);
-  }
-}
-
-
-
-
-/* =====================================================
-   TESTIMONIALS
-===================================================== */
-
-.avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: colors.$white;
-
-  &.primary {
-    background-color: colors.$custom-primary;
-  }
-
-  &.success {
-    background-color: colors.$emerald-600;
-  }
-
-  &.purple {
-    background-color: colors.$purple-500;
-  }
-}
-
-/* =====================================================
-   CTA SECTION
-===================================================== */
-
-.cta-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(colors.$secondary, 0.1);
-}
-
-.bg-glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer a {
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: colors.$white;
-  }
-}
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 1px colors.$custom-primary;
-  }
-  50% {
-    box-shadow: 0 0 2px colors.$custom-primary;
-  }
-  100% {
-    box-shadow: 0 0 1px colors.$custom-primary;
-  }
-}

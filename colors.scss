@@ -1,9 +1,9 @@
 /* =====================================================
    BRAND COLORS
 ===================================================== */
-$custom-primary: #006717;
-$primary-dark: #0f2313;
-$secondary: #0f172a;
+$primary: #6777EF;
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 10%);
 
 /* =====================================================
    NEUTRAL / SLATE SCALE (MOST USED)

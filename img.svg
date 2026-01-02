@@ -1,0 +1,5 @@
+ <div class="curve-line ">
+            <svg viewBox="0 0 400 60" preserveAspectRatio="none">
+              <path class="curve-line-path" d="M10 40 Q200 -5 390 40" />
+            </svg>
+          </div>

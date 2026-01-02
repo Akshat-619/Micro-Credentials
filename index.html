@@ -5,899 +5,290 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>University Micro-Credentials Portal</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
     rel="stylesheet">
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- Compiled SCSS -->
   <link rel="stylesheet" href="main.css">
 </head>
 
-<body class="bg-grey text-slate pt-5">
+<body class="bg-grey mt-1">
 
   <!-- ================= HEADER ================= -->
-   
+  <header class="position-fixed top-0 z-3 w-100 mt-2 header-blur Main-Header">
+    <div class="container-xxl d-flex align-items-center position-relative">
 
-  <header class="position-fixed w-100 top-0 z-3 header-blur border-bottom Main-Header">
-    <div class="container-xxl d-flex justify-content-between align-items-center position-relative">
-
-      <!-- LOGO (START) -->
-
+      <!-- LOGO -->
       <div class="d-flex align-items-center gap-3 flex-shrink-0">
         <div class="logo-box">
-          <img src="MS-Logo.webp" alt="">
+          <img src="MS-Logo.webp" alt="Logo">
         </div>
       </div>
 
-      <!-- NAV (CENTER PERFECTLY) -->
-      <nav class="start-50  d-none d-lg-flex  align-items-center gap-4 fw-medium text-muted">
+      <!-- NAV -->
+      <nav class="d-none d-lg-flex ms-auto align-items-center fw-medium text-muted Navbar">
+        <ul class="d-flex m-0 p-0 list-unstyled position-relative">
 
-        <ul class="d-flex gap-5 m-0 p-0 list-unstyled">
-          <li><a href="#credentials" class="nav-link-custom">Credentials</a></li>
-          <li><a href="#" class="nav-link-custom">About Us</a></li>
-          <li><a href="#" class="nav-link-custom">For Corporates</a></li>
+          <li>
+            <a href="#" class="nav-link-custom">Home</a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link-custom">About</a>
+          </li>
+
+          <li>
+            <a href="#credentials" class="nav-link-custom">Credentials</a>
+          </li>
+
+          <!-- MEGA MENU -->
+          <li class="mega-menu-parent">
+            <a href="#" class="nav-link-custom mega-toggle">Categories</a>
+
+            <div class="mega-menu">
+              <div class="mega-grid">
+
+                <div class="mega-col">
+                  <h6>Technology</h6>
+                  <a href="#">Web Development</a>
+                  <a href="#">AI & ML</a>
+                  <a href="#">Data Science</a>
+                  <a href="#">Cloud Computing</a>
+                </div>
+
+                <div class="mega-col">
+                  <h6>Design</h6>
+                  <a href="#">UI / UX</a>
+                  <a href="#">Graphic Design</a>
+                  <a href="#">Motion Design</a>
+                  <a href="#">Branding</a>
+                </div>
+
+                <div class="mega-col">
+                  <h6>Business</h6>
+                  <a href="#">Marketing</a>
+                  <a href="#">Finance</a>
+                  <a href="#">Entrepreneurship</a>
+                  <a href="#">Management</a>
+                </div>
+
+                <div class="mega-col">
+                  <h6>Career</h6>
+                  <a href="#">Internships</a>
+                  <a href="#">Certifications</a>
+                  <a href="#">Job Ready Paths</a>
+                  <a href="#">Skill Tests</a>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link-custom">For Corporates</a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link-custom">En</a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link-custom">Login</a>
+          </li>
+
+          <li class="pe-0">
+            <a href="#" class="sign-up montserrat-semibold">Sign Up</a>
+          </li>
+
         </ul>
       </nav>
 
-      <!-- BUTTONS (END) -->
-    <!-- AUTH BUTTONS -->
-<div class="d-flex align-items-end gap-3 flex-shrink-0" id="auth-buttons">
-  <div class="sign-in" id="sign-in">
-    SIGN IN
-  </div>
-  <div class="sign-up" id="sign-up">
-    SIGN UP
-  </div>
-</div>
+      <!-- USER ICONS -->
+      <div class="d-flex align-items-center gap-4 flex-shrink-0 d-none" id="user-icons">
 
-<!-- USER ICONS -->
-<div class="d-flex align-items-center gap-4 flex-shrink-0 d-none" id="user-icons">
-  <div class="dropdown notification-dropdown">
-  <div
-    class="Usernotification-icon"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    <i class="bi bi-bell-fill nav-icon-color fs-5"></i>
-  </div>
+        <!-- Notifications -->
+        <div class="dropdown notification-dropdown">
+          <div class="Usernotification-icon" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-bell-fill nav-icon-color fs-5"></i>
+          </div>
 
-  <ul class="dropdown-menu dropdown-menu-end notification-dropdown-menu">
-    <li class="notification-header">
-      What’s new
-    </li>
+          <ul class="dropdown-menu dropdown-menu-end notification-dropdown-menu">
+            <li class="notification-header">What’s new</li>
 
-    <li>
-      <a class="dropdown-item highlight" href="#">
-         New course added: Advanced UI Design
-      </a>
-    </li>
+            <li>
+              <a class="dropdown-item highlight" href="#">
+                New course added: Advanced UI Design
+              </a>
+            </li>
 
-    <li>
-      <a class="dropdown-item" href="#">
-         Trending now: Full-Stack MERN Pathway
-      </a>
-    </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                Trending now: Full-Stack MERN Pathway
+              </a>
+            </li>
 
-    <li>
-      <a class="dropdown-item" href="#">
-         Enrollment open for January batch
-      </a>
-    </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                Enrollment open for January batch
+              </a>
+            </li>
 
-    <li><hr class="dropdown-divider"></li>
+            <li><hr class="dropdown-divider"></li>
 
-    <li>
-      <a class="dropdown-item view-all" href="#">
-        Explore all updates
-      </a>
-    </li>
-  </ul>
-</div>
+            <li>
+              <a class="dropdown-item view-all" href="#">
+                Explore all updates
+              </a>
+            </li>
+          </ul>
+        </div>
 
+        <!-- Wishlist -->
+        <div class="dropdown wishlist-dropdown">
+          <div class="Userwishlist-icon" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-heart-fill nav-icon-color fs-5"></i>
+          </div>
 
- <div class="dropdown wishlist-dropdown">
-  <div
-    class="Userwishlist-icon"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    <i class="bi bi-heart-fill nav-icon-color fs-5"></i>
-  </div>
+          <ul class="dropdown-menu dropdown-menu-end wishlist-dropdown-menu">
+            <li class="wishlist-header">Your Wishlist</li>
 
-  <ul class="dropdown-menu dropdown-menu-end wishlist-dropdown-menu">
-    <li class="wishlist-header">
-      Your Wishlist
-    </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-bookmark me-2"></i> Saved Item One
+              </a>
+            </li>
 
-    <li>
-      <a class="dropdown-item" href="#">
-        <i class="bi bi-bookmark me-2"></i>
-        Saved Item One
-      </a>
-    </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-bookmark me-2"></i> Saved Item Two
+              </a>
+            </li>
 
-    <li>
-      <a class="dropdown-item" href="#">
-        <i class="bi bi-bookmark me-2"></i>
-        Saved Item Two
-      </a>
-    </li>
+            <li><hr class="dropdown-divider"></li>
 
-    <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item view-all" href="#">
+                View all wishlist
+              </a>
+            </li>
+          </ul>
+        </div>
 
-    <li>
-      <a class="dropdown-item view-all" href="#">
-        View all wishlist
-      </a>
-    </li>
-  </ul>
-</div>
+        <!-- User -->
+        <div class="dropdown user-dropdown">
+          <div class="Userprofile-icon" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle nav-icon-color fs-5"></i>
+          </div>
 
+          <ul class="dropdown-menu dropdown-menu-end user-dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-person me-2"></i> Profile
+              </a>
+            </li>
 
- <div class="dropdown user-dropdown">
-  <div
-    class="Userprofile-icon"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    <i class="bi bi-person-circle nav-icon-color fs-5"></i>
-  </div>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-speedometer2 me-2"></i> Dashboard
+              </a>
+            </li>
 
-  <ul class="dropdown-menu dropdown-menu-end user-dropdown-menu">
-    <li>
-      <a class="dropdown-item" href="#">
-        <i class="bi bi-person me-2"></i> Profile
-      </a>
-    </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-gear me-2"></i> Settings
+              </a>
+            </li>
 
-    <li>
-      <a class="dropdown-item" href="#">
-        <i class="bi bi-speedometer2 me-2"></i> Dashboard
-      </a>
-    </li>
+            <li><hr class="dropdown-divider"></li>
 
-    <li>
-      <a class="dropdown-item" href="#">
-        <i class="bi bi-gear me-2"></i> Settings
-      </a>
-    </li>
+            <li>
+              <a class="dropdown-item logout" href="#">
+                <i class="bi bi-box-arrow-right me-2"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
 
-    <li><hr class="dropdown-divider"></li>
-
-    <li>
-      <a class="dropdown-item logout" href="#">
-        <i class="bi bi-box-arrow-right me-2"></i> Logout
-      </a>
-    </li>
-  </ul>
-</div>
-
-
-</div>
-
-
-
-
-        <button class="btn d-lg-none text-muted">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
       </div>
+
+      <!-- MOBILE MENU -->
+      <button class="btn d-lg-none text-muted">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
 
     </div>
   </header>
 
-
   <!-- ================= HERO ================= -->
-  <section class="Hero-Banner mt-3 mx-4 mt-5">
-    <div class="container-xxl">
-      <div class="row align-items-center ">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-          <div class="ms-5">
-            <h2 class="Hero-Title"> <b>A <span><b>unique</b></span> approach to &nbsp;learning foreign <br> languages
-                online</b>
-            </h2>
-            <p class="Hero-subTitle">Learn at your own pace, with lifetime access on mobile and desktop</p>
-          </div>
-        </div>
+  <section class="Hero-Banner mt-1 mx-4 pt-5 pb-5">
+    <div class="container-xxl pt-5 my-5">
 
-        <div class="  col-md-6 col-sm-12 col-12 pb-5 pt-5 ">
-          <div class="d-flex justify-content-center align-items-center position-relative">
-
-            <div class="hero-secondary-container position-absolute ">
-            </div>
-
-            <div class="hero-primary-container position-relative d-flex justify-content-center ">
-              <img class="" src="Hero-Banner-Img.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-
-
-
-
-
-
-
-  <!-- ================= EXPLORE ================= -->
-  <section class="py-5 bg-white border-bottom" id="explore-credentials">
-    <div class="container-xxl">
-
-      <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-4 mb-4">
+      <div class="d-flex align-items-center">
 
         <!-- LEFT CONTENT -->
-        <div>
-          <div class="featured-title mb-1">
-            Explore Microcredentials
+        <div class="pe-5">
+          <h2 class="Hero-Title open-sans-extrabold">
+            <span>A Unique Approach to</span> Learning Foreign Languages Online.
+          </h2>
+
+          <div class="curve-line">
+            <svg viewBox="0 0 400 60" preserveAspectRatio="none">
+              <path class="curve-line-path" d="M10 40 Q200 -5 390 40" />
+            </svg>
           </div>
 
-          <div class="featured-subheader mb-0">
-            Discover the right learning opportunity for your goals.
-          </div>
-        </div>
-        </div>
-
-        <!-- RIGHT NAV TABS -->
-        <div class="featured-nav d-flex justify-content-end">
-          <div class="nav nav-tabs" id="featured-tab" role="tablist">
-
-            <button class="nav-link active" id="credentials-tab" data-bs-toggle="tab" data-bs-target="#credentials"
-              type="button" role="tab" aria-selected="true">
-              Credentials
-            </button>
-
-            <button class="nav-link" id="collections-tab" data-bs-toggle="tab" data-bs-target="#collections"
-              type="button" role="tab" aria-selected="false">
-              Collections
-            </button>
-
-            <button class="nav-link" id="pathways-tab" data-bs-toggle="tab" data-bs-target="#pathways" type="button"
-              role="tab" aria-selected="false">
-              Pathways
-            </button>
-
-          </div>
-        </div>
-
-                                    <!-- Credentials -->
-        <div class="tab-content mt-4">
-          <div class="tab-pane fade show active" id="credentials">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <div class="fw-bold fs-5 d-flex align-items-center gap-2">
-                <span class="material-symbols-outlined  filter-icon">filter_list</span>
-                <div class="featuredCred-title">
-                  Top Credentials
-                </div>
-
-              </div>
-              <a href="#" class="text-primary fw-bold small text-decoration-none">
-                View all Credentials
-              </a>
-            </div>
-         
-            <div class="row g-4">
-
-              <!-- CARD 1 -->
-              <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                <div class="box cardCourse h-100 m-0">
-                  <div class="box-body h-100 d-flex flex-column">
-                    <div class="courseImage position-relative overflow-hidden">
-                      <span
-                        class="credentialMode bg-success px-3 py-0 position-absolute top-0 left-0 fw-bold"><small>Online</small></span>
-                      <img
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo">
-                    </div>
-                    <a href="/RFC_General_Administrative/CredentialDetails" class="spanCourseName">Credentials For
-                      Students</a>
-                    <input type="hidden" class="hdncourseId" value="30394">
-                    <div class="text-center mt-1 mb-3 small lh-sm spanCoursesubName">
-                      EE101 - Fundamentals of Electronics
-                    </div>
-                    <hr class="mt-auto">
-                    <div class="courseUtilities d-flex justify-content-between">
-                      <span type="label" class="d-flex g-2">
-                        <img src="./Badge-icon.png">
-                        <img src="./certificate-icon.png">
-                      </span>
-                      <span class="spanCourseDuration">2 weeks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-                                 
-                                    
-              <!-- CARD 2 -->
-              <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                <div class="box cardCourse h-100 m-0">
-                  <div class="box-body h-100 d-flex flex-column">
-                    <div class="courseImage position-relative overflow-hidden">
-                      <span
-                        class="credentialMode bg-success px-3 py-0 position-absolute top-0 left-0 fw-bold"><small>Online</small></span>
-                      <img
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo">
-                    </div>
-                    <a href="/RFC_General_Administrative/CredentialDetails" class="spanCourseName">Credentials For
-                      Students</a>
-                    <input type="hidden" class="hdncourseId" value="30394">
-                    <div class="text-center mt-1 mb-3 small lh-sm spanCoursesubName">
-                      EE101 - Fundamentals of Electronics
-                    </div>
-                    <hr class="mt-auto">
-                    <div class="courseUtilities d-flex justify-content-between">
-                      <span type="label" class="d-flex g-2">
-                        <img src="./Badge-icon.png">
-                      </span>
-                      <span class="spanCourseDuration">2 weeks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- CARD 3 -->
-              <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                <div class="box cardCourse h-100 m-0">
-                  <div class="box-body h-100 d-flex flex-column">
-                    <div class="courseImage position-relative overflow-hidden">
-                      <span
-                        class="credentialMode bg-success px-3 py-0 position-absolute top-0 left-0 fw-bold"><small>Online</small></span>
-                      <img
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo">
-                    </div>
-                    <a href="/RFC_General_Administrative/CredentialDetails" class="spanCourseName">Credentials For
-                      Students</a>
-                    <input type="hidden" class="hdncourseId" value="30394">
-                    <div class="text-center mt-1 mb-3 small lh-sm spanCoursesubName">
-                      EE101 - Fundamentals of Electronics
-                    </div>
-                    <hr class="mt-auto">
-                    <div class="courseUtilities d-flex justify-content-between">
-                      <span type="label" class="d-flex g-2">
-                        <img src="./Badge-icon.png">
-                         <img src="./certificate-icon.png">
-                      </span>
-                      <span class="spanCourseDuration">2 weeks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card-4 -->
-
-              <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                <div class="box cardCourse h-100 m-0">
-                  <div class="box-body h-100 d-flex flex-column">
-                    <div class="courseImage position-relative overflow-hidden">
-                      <span
-                        class="credentialMode bg-success px-3 py-0 position-absolute top-0 left-0 fw-bold"><small>Online</small></span>
-                      <img
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo">
-                    </div>
-                    <a href="/RFC_General_Administrative/CredentialDetails" class="spanCourseName">Credentials For
-                      Students</a>
-                    <input type="hidden" class="hdncourseId" value="30394">
-                    <div class="text-center mt-1 mb-3 small lh-sm spanCoursesubName">
-                      EE101 - Fundamentals of Electronics
-                    </div>
-                    <hr class="mt-auto">
-                    <div class="courseUtilities d-flex justify-content-between">
-                      <span type="label" class="d-flex g-2">
-                        <img src="./Badge-icon.png">
-                      </span>
-                      <span class="spanCourseDuration">2 weeks</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-                                <!-- Collections -->
-          <div class="tab-pane fade" id="collections">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <div class="fw-bold fs-5 d-flex align-items-center gap-2">
-                <span class="material-symbols-outlined text-primary">filter_list</span>
-                <div class="featuredCred-title">
-                  Top Collections
-                </div>
-
-              </div>
-              <a href="#" class="text-primary fw-bold small text-decoration-none">
-                View all Collections
-              </a>
-            </div>
-
-            <div class="row g-4">
-
-              <!-- CARD 1 -->
-              <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                        <div class="box cardCourse curso h-100 m-0">
-                            <div class="box-body h-100 d-flex flex-column">
-                                <div class="courseImage position-relative overflow-hidden position-relative">
-                                    <span class="credentialMode bg-success px-3 py-0 position-absolute top-0 left-0 fw-bold btnSelectCredentialsDrawer" id="btnSelectCredentialsDrawer" data-drawer="#SelectCredentialsDrawer" role="button"><small>0 Credentials</small></span>
-                                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo">
->
-                                </div>
-                                <a href="/RFC_General_Administrative/MicrocredentialsCollectionDetails" class="spanCourseName">Data &amp; Analytics</a>
-                                <input type="hidden" class="hdncourseId" value="30394">
-                                <div class="text-center mt-1 mb-0 small lh-sm spanCoursesubName">
-                                    DA-GRP
-                                </div>
-                                <div class="text-center mt-0 mb-3 small lh-sm spanCourseCounts">
-                                    No. of Learnings: 2550
-                                </div>
-                                <hr class="mt-auto">
-                                <div class="courseUtilities d-flex justify-content-between ">
-                                    <span type="label" class="d-flex g-2 spanCourseDomain">
-                                        <span>Domain</span>
-                                    </span>
-
-                                    <span>
-                                        <span class="badge bg-sucess badge-success">Active</span>
-
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-              <!-- CARD 2 -->
-              <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                        <div class="box cardCourse curso h-100 m-0">
-                            <div class="box-body h-100 d-flex flex-column">
-                                <div class="courseImage position-relative overflow-hidden position-relative">
-                                    <span class="credentialMode bg-success px-3 py-0 position-absolute top-0 left-0 fw-bold btnSelectCredentialsDrawer" id="btnSelectCredentialsDrawer" data-drawer="#SelectCredentialsDrawer" role="button"><small>5 Credentials</small></span>
-                                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo">
->
-                                </div>
-                                <a href="/RFC_General_Administrative/MicrocredentialsCollectionDetails" class="spanCourseName">Data &amp; Analytics</a>
-                                <input type="hidden" class="hdncourseId" value="30394">
-                                <div class="text-center mt-1 mb-0 small lh-sm spanCoursesubName">
-                                    DA-GRP
-                                </div>
-                                <div class="text-center mt-0 mb-3 small lh-sm spanCourseCounts">
-                                    No. of Learnings: 2550
-                                </div>
-                                <hr class="mt-auto">
-                                <div class="courseUtilities d-flex justify-content-between ">
-                                    <span type="label" class="d-flex g-2 spanCourseDomain">
-                                        <span class="">Domain</span>
-                                    </span>
-
-                                    <span>
-                                        <span class="badge bg-sucess badge-success">Active</span>
-
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-              <!-- CARD 3 -->
-               <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                        <div class="box cardCourse curso h-100 m-0">
-                            <div class="box-body h-100 d-flex flex-column">
-                                <div class="courseImage position-relative overflow-hidden position-relative">
-                                    <span class="credentialMode bg-success px-3 py-0 position-absolute top-0 left-0 fw-bold btnSelectCredentialsDrawer" id="btnSelectCredentialsDrawer" data-drawer="#SelectCredentialsDrawer" role="button"><small>10 Credentials</small></span>
-                                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo">
-                                    >
-                                </div>
-                                <a href="/RFC_General_Administrative/MicrocredentialsCollectionDetails" class="spanCourseName">Data &amp; Analytics</a>
-                                <input type="hidden" class="hdncourseId" value="30394">
-                                <div class="text-center mt-1 mb-0 small lh-sm spanCoursesubName">
-                                    DA-GRP
-                                </div>
-                                <div class="text-center mt-0 mb-3 small lh-sm spanCourseCounts">
-                                    No. of Learnings: 2550
-                                </div>
-                                <hr class="mt-auto">
-                                <div class="courseUtilities d-flex justify-content-between ">
-                                    <span type="label" class="d-flex g-2 spanCourseDomain">
-                                        <span class="">Domain</span>
-                                    </span>
-
-                                    <span>
-                                        <span class="badge bg-sucess badge-success">Active</span>
-
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-              <!-- Card-4 -->
-
-               <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                        <div class="box cardCourse curso h-100 m-0">
-                            <div class="box-body h-100 d-flex flex-column">
-                                <div class="courseImage position-relative overflow-hidden position-relative">
-                                    <span class="credentialMode bg-success px-3 py-0 position-absolute top-0 left-0 fw-bold btnSelectCredentialsDrawer" id="btnSelectCredentialsDrawer" data-drawer="#SelectCredentialsDrawer" role="button"><small>15 Credentials</small></span>
-                                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo">
->
-                                </div>
-                                <a href="/RFC_General_Administrative/MicrocredentialsCollectionDetails" class="spanCourseName">Data &amp; Analytics</a>
-                                <input type="hidden" class="hdncourseId" value="30394">
-                                <div class="text-center mt-1 mb-0 small lh-sm spanCoursesubName">
-                                    DA-GRP
-                                </div>
-                                <div class="text-center mt-0 mb-3 small lh-sm spanCourseCounts">
-                                    No. of Learnings: 2550
-                                </div>
-                                <hr class="mt-auto">
-                                <div class="courseUtilities d-flex justify-content-between">
-                                    <span type="label" class="d-flex g-2">
-                                        <span class="">Domain</span>
-                                    </span>
-
-                                    <span>
-                                        <span class="badge bg-sucess badge-success">Active</span>
-
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-          </div>
-
-                                   <!-- Pathways -->
-          <div class="tab-pane fade" id="pathways">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <div class="fw-bold fs-5 d-flex align-items-center gap-2">
-                <span class="material-symbols-outlined text-primary">filter_list</span>
-                <div class="featuredCred-title">
-                  Top Pathways
-                </div>
-
-              </div>
-              <a href="#" class="text-primary fw-bold small text-decoration-none">
-                View all Pathways
-              </a>
-            </div>
-
-            <div>
-<form>
-              <!-- CARD 1 -->
-               
-              <div class="row microcredentials-pathway">
-                        <div class="col-lg-6 col-md-6 col-12 mb-4">
-                            <div class="pathway-card border rounded-3 p-3 h-100 position-relative bg-white d-flex align-items-start">
-                                <a href="#" class="edit-icon edit-icon-position position-absolute text-secondary btnCreatePathwayDrawer" data-drawer="#CreatePathwayDrawer" title="Edit Pathway">
-                                    <i class="bi bi-pencil-square fs-6"></i>
-                                </a>
-                                <div class="flex-shrink-0 me-4 pathway-card-img">
-                                    <img                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo"
- class="rounded-3 object-fit-cover w-130px h-130px" alt="Pathway">
-                                </div>
-                                <div class="flex-grow-1 d-flex flex-column h-100 overflow-hidden">
-                                    <h5 class="mb-2 fw-semibold text-dark text-truncate spanCourseName">CALS Career Pathways: Collaboration</h5>
-                                    <p class="mb-2 text-secondary small lh-base text-muted text-clamp spanCoursesubName">
-                                        Save your favorite eaters and access them whever you want you need them from the menu. This is a longer description to show how the card adapts to more content.
-                                    </p>
-                                    <div class="mb-2">
-                                        <a href="#" class="text-decoration-none small readMore" data-bs-toggle="modal" data-bs-target="#viewDetailsModalView">Read More</a>
-                                    </div>
-                                    <div class="mt-auto d-flex justify-content-between align-items-center">
-                                        <span type="label" class="badge badge-info rounded-3">25 Credentials</span>
-                                        <button type="button" tabindex="1" class="btn  btn-sm btnBuildPathway" id="btnCreatePathway"><span class="me-2">View Pathway</span><i class="bi bi-arrow-right ms-2 align-middle btnBuildiPathway-icon"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    
-                        <div class="col-lg-6 col-md-6 col-12 mb-4">
-                            <div class="pathway-card border rounded-3 p-3 h-100 position-relative bg-white d-flex align-items-start">
-                                <a href="#" class="edit-icon edit-icon-position position-absolute text-secondary btnCreatePathwayDrawer" data-drawer="#CreatePathwayDrawer" title="Edit Pathway">
-                                    <i class="bi bi-pencil-square fs-6"></i>
-                                </a>
-                                <div class="flex-shrink-0 me-4 pathway-card-img">
-                                    <img                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo"
- class="rounded-3 object-fit-cover w-130px h-130px" alt="Pathway">
-                                </div>
-                                <div class="flex-grow-1 d-flex flex-column h-100 overflow-hidden">
-                                    <h5 class="mb-2 fw-semibold text-dark text-truncate spanCourseName">CALS Career Pathways: Collaboration</h5>
-                                    <p class="mb-2 text-secondary small lh-base text-muted text-clamp spanCoursesubName">
-                                        Save your favorite eaters and access them whever you want you need them from the menu. This is a longer description to show how the card adapts to more content.
-                                    </p>
-                                    <div class="mb-2">
-                                        <a href="#" class="text-decoration-none small readMore" data-bs-toggle="modal" data-bs-target="#viewDetailsModalView">Read More</a>
-                                    </div>
-                                    <div class="mt-auto d-flex justify-content-between align-items-center">
-                                        <span type="label" class="badge badge-info rounded-3">25 Credentials</span>
-                                        <button type="button" tabindex="1" class="btn btn-sm btnBuildPathway" id="btnCreatePathway"><span class="me-2">View Pathway</span><i class="bi bi-arrow-right ms-2 align-middle"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12 mb-4">
-                            <div class="pathway-card border rounded-3 p-3 h-100 position-relative bg-white d-flex align-items-start">
-                                <a href="#" class="edit-icon edit-icon-position position-absolute text-secondary btnCreatePathwayDrawer" data-drawer="#CreatePathwayDrawer" title="Edit Pathway">
-                                    <i class="bi bi-pencil-square fs-6"></i>
-                                </a>
-                                <div class="flex-shrink-0 me-4 pathway-card-img">
-                                    <img                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo"
- class="rounded-3 object-fit-cover w-130px h-130px" alt="Pathway">
-                                </div>
-                                <div class="flex-grow-1 d-flex flex-column h-100 overflow-hidden">
-                                    <h5 class="mb-2 fw-semibold text-dark text-truncate spanCourseName">CALS Career Pathways: Collaboration</h5>
-                                    <p class="mb-2 text-secondary small lh-base text-muted text-clamp spanCoursesubName">
-                                        Save your favorite eaters and access them whever you want you need them from the menu. This is a longer description to show how the card adapts to more content.
-                                    </p>
-                                    <div class="mb-2">
-                                        <a href="#" class="text-decoration-none small readMore" data-bs-toggle="modal" data-bs-target="#viewDetailsModalView">Read More</a>
-                                    </div>
-                                    <div class="mt-auto d-flex justify-content-between align-items-center">
-                                        <span type="label" class="badge badge-info rounded-3">25 Credentials</span>
-                                        <button type="button" tabindex="1" class="btn btn-sm btnBuildPathway" id="btnCreatePathway"><span class="me-2">View Pathway</span><i class="bi bi-arrow-right ms-2 align-middle"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-                  
-                        <div class="col-lg-6 col-md-6 col-12 mb-4">
-                            <div class="pathway-card border rounded-3 p-3 h-100 position-relative bg-white d-flex align-items-start">
-                                <a href="#" class="edit-icon edit-icon-position position-absolute text-secondary btnCreatePathwayDrawer" data-drawer="#CreatePathwayDrawer" title="Edit Pathway">
-                                    <i class="bi bi-pencil-square fs-6"></i>
-                                </a>
-                                <div class="flex-shrink-0 me-4 pathway-card-img">
-                                    <img                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVtONhuGU-fw75HpkXsYFcKwD-SUEP75NzxXTKiZFeXHgBur6RINZgjmed7_jHF6_BffH2kGxMufb3wkQnbJwoc_dtF-wXG376yGb5PIvipeteSlWbURVJTwOW0NVfgGabcULFROAVO4xI5NVb3bcx3Doztf_KMZW041yZiN9sEg-IERG76fYKxfFN8W8rEHj3JSLUeN5J1hoZeVjKL2S4ORIAk328rwEZSHhHVdbWNsHG-sxwaOGVespA_yOKLWEewjJ4JMv82Bo"
- class="rounded-3 object-fit-cover w-130px h-130px" alt="Pathway">
-                                </div>
-                                <div class="flex-grow-1 d-flex flex-column h-100 overflow-hidden">
-                                    <h5 class="mb-2 fw-semibold text-dark text-truncate spanCourseName">CALS Career Pathways: Collaboration</h5>
-                                    <p class="mb-2 text-secondary small lh-base text-muted text-clamp spanCoursesubName">
-                                        Save your favorite eaters and access them whever you want you need them from the menu. This is a longer description to show how the card adapts to more content.
-                                    </p>
-                                    <div class="mb-2">
-                                        <a href="#" class="text-decoration-none small readMore" data-bs-toggle="modal" data-bs-target="#viewDetailsModalView">Read More</a>
-                                    </div>
-                                    <div class="mt-auto d-flex justify-content-between align-items-center">
-                                        <span type="label" class="badge badge-info rounded-3">25 Credentials</span>
-                                        <button type="button" tabindex="1" class="btn  btn-sm btnBuildPathway" id="btnCreatePathway"><span class="me-2">View Pathway</span><i class="bi bi-arrow-right ms-2 align-middle"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-</form>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-
-
-  <section class="py-5 bg-slate-50 border-top border-bottom border-slate-200">
-  <div class="container-xl px-3 px-md-4">
-
-    <!-- Section Heading -->
-    <div class="text-center mb-5">
-      <h3 class="fw-bold text-slate-900 fs-3">
-        How it Works?
-      </h3>
-      <p class="text-slate-500 mt-2">
-        Your journey to certification in four simple steps
-      </p>
-    </div>
-
-    <div class="position-relative">
-
-      <!-- CONNECTOR LINE -->
-      <div class="d-none d-md-block how-steps-connector"></div>
-
-      <!-- Steps -->
-      <div class="row g-4 text-center position-relative how-steps-row">
-
-        <!-- Step 1 -->
-        <div class="col-12 col-md-3 step">
-          <div class="d-flex flex-column align-items-center">
-            <div class="step-icon mb-4">
-              <span class="material-symbols-outlined">grid_view</span>
-            </div>
-            <h4 class="fw-bold text-slate-900 fs-6 mb-2">1. Browse</h4>
-            <p class="text-slate-500 small mx-auto" style="max-width: 200px;">
-              Explore our catalog of skills, courses, and pathways.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="col-12 col-md-3 step">
-          <div class="d-flex flex-column align-items-center">
-            <div class="step-icon mb-4">
-              <span class="material-symbols-outlined">login</span>
-            </div>
-            <h4 class="fw-bold text-slate-900 fs-6 mb-2">
-              2. Sign in &amp; Enroll
-            </h4>
-            <p class="text-slate-500 small mx-auto" style="max-width: 200px;">
-              Create your account and enroll instantly.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="col-12 col-md-3 step">
-          <div class="d-flex flex-column align-items-center">
-            <div class="step-icon mb-4">
-              <span class="material-symbols-outlined">laptop_mac</span>
-            </div>
-            <h4 class="fw-bold text-slate-900 fs-6 mb-2">
-              3. Learn in LMS
-            </h4>
-            <p class="text-slate-500 small mx-auto" style="max-width: 200px;">
-              Access premium content and interactive labs.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="col-12 col-md-3 step">
-          <div class="d-flex flex-column align-items-center">
-            <div class="step-icon mb-4">
-              <span class="material-symbols-outlined">workspace_premium</span>
-            </div>
-            <h4 class="fw-bold text-slate-900 fs-6 mb-2">
-              4. Earn &amp; Share
-            </h4>
-            <p class="text-slate-500 small mx-auto" style="max-width: 200px;">
-              Receive your digital badge and share it on LinkedIn.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- ================= TESTIMONIALS ================= -->
-  <section class="py-5 bg-grey border-bottom">
-    <div class="container-xxl">
-      <div class="text-center mb-5">
-        <h3 class="fw-bold">Students who built Microcredentials Portfolio</h3>
-        <p class="text-muted">Hear from our community of successful learners</p>
-      </div>
-
-      <div class="row g-4">
-
-        <div class="col-md-4">
-          <div class="bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column">
-            <div class="text-warning mb-3">
-              ★★★★★
-            </div>
-            <p class="fst-italic text-muted flex-grow-1">
-              "The micro-credentials helped me pivot into Data Science within months.
-              The projects were real-world applicable and boosted my confidence."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <div class="avatar primary">SJ</div>
-              <div>
-                <div class="fw-bold">Sarah Jenkins</div>
-                <small class="text-muted">Data Analyst at TechFlow</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column">
-            <div class="text-warning mb-3">
-              ★★★★☆
-            </div>
-            <p class="fst-italic text-muted flex-grow-1">
-              "I was able to upskill in Strategic Leadership while working full-time.
-              The flexibility helped me get promoted."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <div class="avatar success">MT</div>
-              <div>
-                <div class="fw-bold">Mark Thompson</div>
-                <small class="text-muted">Product Manager</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column">
-            <div class="text-warning mb-3">
-              ★★★★★
-            </div>
-            <p class="fst-italic text-muted flex-grow-1">
-              "The AI & Machine Learning pathway is top-notch.
-              The verified badge boosted my professional visibility."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <div class="avatar purple">ER</div>
-              <div>
-                <div class="fw-bold">Elena Rodriguez</div>
-                <small class="text-muted">AI Engineer</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CTA ================= -->
-  <section class="bg-primary position-relative overflow-hidden">
-    <div class="cta-overlay"></div>
-    <div class="container-xxl py-5 py-lg-6 position-relative text-white">
-      <div
-        class="bg-glass p-5 p-lg-6 rounded-4 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
-        <div>
-          <h2 class="fw-extrabold mb-3">Ready to start learning?</h2>
-          <p class="fs-5 mb-0">
-            Join a community of ambitious learners today.
+          <p class="Hero-subTitle open-sans-medium">
+            <i>Learn at your own pace, with lifetime access on mobile and desktop</i>
           </p>
+
+          <div class="d-flex align-items-center mt-5 gap-5">
+            <div class="enroll-btn montserrat-semibold">
+              <a href="#">Enroll Now</a>
+            </div>
+
+            <div class="d-flex demo open-sans-medium align-items-center gap-2">
+              <i class="bi bi-play-circle fs-1 demo-icon"></i>
+              <span>How it works</span>
+            </div>
+          </div>
         </div>
-        <div class="d-flex gap-3 flex-wrap">
-          <button class="btn btn-light btn-lg fw-bold text-primary lift">
-            Get Started for Free
-          </button>
-          <button class="btn btn-outline-light btn-lg fw-bold">
-            View Pricing
-          </button>
+
+        <!-- RIGHT IMAGE -->
+        <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+          <div class="hero-secondary-container position-absolute"></div>
+
+          <div class="hero-primary-container position-relative d-flex justify-content-center">
+            <img src="Hero-Banner-Img.webp" alt="Hero Image">
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="bg-dark text-secondary py-4 border-top border-dark">
-    <div class="container-xxl d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-      <div class="d-flex align-items-center gap-2 text-white fw-bold">
-        <span class="material-symbols-outlined">school</span>
-        University Portal
-      </div>
+  <!-- Browse by Category -->
+   <section class="BrowsebyCategory">
 
-      <div class="d-flex gap-4 small">
-        <a href="#" class="text-secondary text-decoration-none">Privacy Policy</a>
-        <a href="#" class="text-secondary text-decoration-none">Terms of Service</a>
-        <a href="#" class="text-secondary text-decoration-none">Support</a>
-      </div>
-
-      <div class="small">
-        © 2023 University Portal. All rights reserved.
-      </div>
+    <div class="Category-Title">
+      <span>Browser</span> By Category
     </div>
-  </footer>
- 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script src="script.js"></script>
+   </section>
+
 </body>
-
 </html>
