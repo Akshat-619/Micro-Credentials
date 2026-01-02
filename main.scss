@@ -612,3 +612,42 @@ text-decoration: none;
   object-fit: cover;
 }
 
+
+/* =====================================================
+            Browse by Category
+===================================================== */
+
+.Category-Title {
+  color: colors.$slate-900;
+  font-size: 24px;
+}
+
+.Category-Title span{
+  color: colors.$primary;
+}
+
+.mini-curve-line{
+ 
+  left: 920px;
+}
+
+.mini-curve-line-path{
+stroke: colors.$primary;
+ 
+}
+
+.Category-subTitle{
+  color: colors.$slate-900;
+  font-size: 16;
+}
+
+.Category-Card{
+  // padding: 30px 147px 30px 16px;
+  background-color:rgba(colors.$primary-light, 0.5);
+  border-radius: 15px;
+}
+.Category-Card img{
+  // padding: 50px 30px;
+  border-radius: 30px;
+
+}
