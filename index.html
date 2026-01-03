@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="main.css">
 </head>
 
-<body class="mt-1">
+<body class="mt-1 pb-5">
 
   <!-- ================= HEADER ================= -->
   <header class="position-fixed top-0 z-3 w-100 mt-2 header-blur Main-Header">
@@ -36,7 +36,7 @@
       <!-- LOGO -->
       <div class="d-flex align-items-center gap-3 flex-shrink-0">
         <div class="logo-box">
-          <img src="MS-Logo.webp" alt="Logo">
+          <a href="#"><img src="MS-Logo.webp" alt="Logo"></a>
         </div>
       </div>
 
@@ -262,8 +262,22 @@
             </div>
 
             <div class="d-flex demo open-sans-medium align-items-center gap-2">
-              <i class="bi bi-play-circle fs-1 demo-icon"></i>
-              <span>How it works</span>
+             
+              <a href="#" id="howItWorks">
+  <i class="bi bi-play-circle fs-1 demo-icon"> <span>How it works</span></i>
+</a>
+
+<div class="video-modal" id="videoModal">
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/watch?v=R_oHWzg63xs"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+    <i class="bi bi-x-square modal-close-icon"></i>
+  </div>
+</div>
             </div>
           </div>
         </div>
@@ -281,10 +295,10 @@
     </div>
   </section>
 
-  <!-- Browse by Category -->
+  <!-- ================= Browse by Category  ================= -->
    <section class="BrowsebyCategory">
 
-    <div class=" position-relative  Category-Title open-sans-extrabold d-flex justify-content-center mt-5">
+    <div class=" position-relative section-title Category-Title open-sans-extrabold d-flex justify-content-center mt-5">
       <span class="me-2">Browser</span>By Category
     </div>
    <div class="  position-absolute  mini-curve-line">
@@ -298,52 +312,159 @@
     />
   </svg>
 </div>
- <div class="Category-subTitle open-sans-medium d-flex justify-content-center mt-4">
+ <div class="Category-subTitle open-sans-medium d-flex justify-content-center mb-5 mt-4">
   <i>Discover the right learning opportunity for your domain.</i>
  </div>
 
 <div class="Categories">
   <div class="container">
-    <div class="row">
+    <div class="row g-4">
 
-      <div class="col-3 mt-5">
-        <ul class="list-unstyled ">
-          <li class="mt-5 Category-Card"><img src="category-blue.svg" alt=""> UI/UX Design</li>
-          <li class="mt-5 Category-Card">Graphics Design</li>
-          <li class="mt-5 Category-Card">Video & Photography</li>
-        </ul>
-      </div>
+      <div class="col-3">
+        
+          <div class=" Category-Card open-sans-semibold cat-blue-card gap-5">
+            <a class="d-flex gap-3 align-items-center" href="">
+              <img src="category-blue.svg" alt=""> UI/UX Design
+            </a>
+          </div>
+          </div>
 
-      <div class="col-3 mt-5">
-        <ul class="list-unstyled">
-          <li class="mt-5 Category-Card">Business Management</li>
-          <li class="mt-5 Category-Card">Digital Marketing</li>
-          <li class="mt-5 Category-Card">Sales & Marketing</li>
-        </ul>
-      </div>
 
-      <div class="col-3 mt-5">
-        <ul class="list-unstyled">
-          <li class="mt-5 Category-Card">Arts & Design</li>
-          <li class="mt-5 Category-Card">Management Consulting</li>
-          <li class="mt-5 Category-Card">Human Resource</li>
-        </ul>
-      </div>
 
-      <div class="col-3 mt-5">
-        <ul class="list-unstyled">
-          <li class="mt-5 Category-Card">Personal Development</li>
-          <li class="mt-5 Category-Card">Product Design</li>
-          <li class="mt-5 Category-Card">Investment Banking</li>
-        </ul>
-      </div>
-
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-purple-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-purple.svg" alt=""> Graphics Design
+      </a>
     </div>
   </div>
-</div>
 
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-yellow-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-yellow.svg" alt=""> Video & Photography
+      </a>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-red-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-red.svg" alt=""> Business Management
+      </a>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-blue-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-blue.svg" alt=""> Digital Marketing
+      </a>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-purple-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-purple.svg" alt=""> Sales & Marketing
+      </a>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-green-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-green.svg" alt=""> Arts & Design
+      </a>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-red-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-red.svg" alt=""> Management Consulting
+      </a>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-blue-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-blue.svg" alt=""> Human Resource
+      </a>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-yellow-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-yellow.svg" alt=""> Personal Development
+      </a>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-green-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-green.svg" alt=""> Product Design
+      </a>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="Category-Card open-sans-semibold cat-red-card">
+      <a class="d-flex gap-3 align-items-center" href="">
+        <img src="category-red.svg" alt=""> Investment Banking
+      </a>
+    </div>
+  </div>
 
    </section>
 
+<!-- =========== About Us =========== -->
+<div class="container-xxl">
+  <section class="AboutUs mt-5">
+
+    <div class="row p-5">
+      <div class="col-3">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="about-card-wrapper position-relative">          
+            <div class="about-secondary-container"></div>
+            <div class="about-primary-container d-flex justify-content-center align-items-center">
+              <img src="" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-9">
+      <div class=" position-relative section-title About-Title open-sans-extrabold d-flex justify-content-center ">
+      <span class="me-2">About</span>Mastersoft
+       <div class="  position-absolute  mini-curve-line">
+  <svg viewBox="0 0 100 30" width="120" height="30">
+    <path
+    class="mini-curve-line-path"
+      d="M5 20 Q50 8 95 20"
+      fill="none"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+  </svg>
+</div>
+
+    </div>
+
+    <div class="About-content open-sans-regular">
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.</p>
+    </div>
+
+    <div class="About-readMore-btn">
+      <a href="">Read More</a>
+    </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+<script src="script.js"></script>
 </body>
 </html>

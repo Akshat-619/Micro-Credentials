@@ -1,7 +1,3 @@
-document.getElementById("sign-in").addEventListener("click", () => {
-  document.getElementById("auth-buttons").classList.add("d-none");
-  document.getElementById("user-icons").classList.remove("d-none");
-});
 
 
 
@@ -39,3 +35,24 @@ megaParent.querySelector(".mega-menu").addEventListener("click", function (e) {
 document.addEventListener("click", function () {
   megaParent.classList.remove("active");
 });
+
+
+
+
+  const header = document.querySelector(".Main-Header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+
+  const openBtn = document.getElementById("howItWorks");
+const modal = document.getElementById("videoModal");
+const closeBtn = document.querySelector(".modal-close-icon");
+
+openBtn.onclick = () => modal.style.display = "flex";
+closeBtn.onclick = () => modal.style.display = "none";
