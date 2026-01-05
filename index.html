@@ -14,8 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
     rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
@@ -31,205 +30,214 @@
 
   <!-- ================= HEADER ================= -->
   <header class="position-fixed top-0 z-3 w-100 mt-2 header-blur Main-Header">
-    <div class="container-xxl d-flex align-items-center position-relative">
+    <div class="container-xxl ">
 
-      <!-- LOGO -->
-      <div class="d-flex align-items-center gap-3 flex-shrink-0">
-        <div class="logo-box">
-          <a href="#"><img src="MS-Logo.webp" alt="Logo"></a>
+      <div class="inner-Main-Header d-flex align-items-center position-relative">
+        <!-- LOGO -->
+
+        <div class="logo-box position-relative">
+          <a class="d-block w-100  " href="#"><img src="MS-Logo.webp" alt="Logo"></a>
         </div>
-      </div>
 
-      <!-- NAV -->
-      <nav class="d-none d-lg-flex ms-auto align-items-center fw-medium text-muted Navbar">
-        <ul class="d-flex m-0 p-0 list-unstyled position-relative">
 
-          <li>
-            <a href="#" class="nav-link-custom">Home</a>
-          </li>
+        <!-- NAV -->
+        <nav class="d-none d-lg-flex ms-auto align-items-center fw-medium text-muted Navbar">
+          <ul class="d-flex m-0 p-0 list-unstyled position-relative">
 
-          <li>
-            <a href="#" class="nav-link-custom">About</a>
-          </li>
+            <li>
+              <a href="#" class="nav-link-custom active">Home</a>
+            </li>
 
-          <li>
-            <a href="#credentials" class="nav-link-custom">Credentials</a>
-          </li>
+            <li>
+              <a href="#" class="nav-link-custom">About</a>
+            </li>
 
-          <!-- MEGA MENU -->
-          <li class="mega-menu-parent">
-            <a href="#" class="nav-link-custom mega-toggle">Categories</a>
+            <li>
+              <a href="#credentials" class="nav-link-custom">Credentials</a>
+            </li>
 
-            <div class="mega-menu">
-              <div class="mega-grid">
+            <!-- MEGA MENU -->
+            <li class="mega-menu-parent">
+              <a href="#" class="nav-link-custom mega-toggle">Categories</a>
 
-                <div class="mega-col">
-                  <h6>Technology</h6>
-                  <a href="#">Web Development</a>
-                  <a href="#">AI & ML</a>
-                  <a href="#">Data Science</a>
-                  <a href="#">Cloud Computing</a>
+              <div class="mega-menu">
+                <div class="mega-grid">
+
+                  <div class="mega-col">
+                    <h6>Technology</h6>
+                    <a href="#">Web Development</a>
+                    <a href="#">AI & ML</a>
+                    <a href="#">Data Science</a>
+                    <a href="#">Cloud Computing</a>
+                  </div>
+
+                  <div class="mega-col">
+                    <h6>Design</h6>
+                    <a href="#">UI / UX</a>
+                    <a href="#">Graphic Design</a>
+                    <a href="#">Motion Design</a>
+                    <a href="#">Branding</a>
+                  </div>
+
+                  <div class="mega-col">
+                    <h6>Business</h6>
+                    <a href="#">Marketing</a>
+                    <a href="#">Finance</a>
+                    <a href="#">Entrepreneurship</a>
+                    <a href="#">Management</a>
+                  </div>
+
+                  <div class="mega-col">
+                    <h6>Career</h6>
+                    <a href="#">Internships</a>
+                    <a href="#">Certifications</a>
+                    <a href="#">Job Ready Paths</a>
+                    <a href="#">Skill Tests</a>
+                  </div>
+
                 </div>
-
-                <div class="mega-col">
-                  <h6>Design</h6>
-                  <a href="#">UI / UX</a>
-                  <a href="#">Graphic Design</a>
-                  <a href="#">Motion Design</a>
-                  <a href="#">Branding</a>
-                </div>
-
-                <div class="mega-col">
-                  <h6>Business</h6>
-                  <a href="#">Marketing</a>
-                  <a href="#">Finance</a>
-                  <a href="#">Entrepreneurship</a>
-                  <a href="#">Management</a>
-                </div>
-
-                <div class="mega-col">
-                  <h6>Career</h6>
-                  <a href="#">Internships</a>
-                  <a href="#">Certifications</a>
-                  <a href="#">Job Ready Paths</a>
-                  <a href="#">Skill Tests</a>
-                </div>
-
               </div>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link-custom">For Corporates</a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link-custom">En</a>
+            </li>
+
+            <li id="login-item">
+              <a href="#" class="nav-link-custom">Login</a>
+            </li>
+
+            <li class="pe-0" id="signup-item">
+              <a href="#" class="sign-up montserrat-semibold">Sign Up</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- USER ICONS -->
+        <div class="d-flex align-items-center gap-4 flex-shrink-0 d-none" id="user-icons">
+
+          <!-- Notifications -->
+          <div class="dropdown notification-dropdown">
+            <div class="Usernotification-icon" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-bell-fill nav-icon-color fs-5"></i>
             </div>
-          </li>
 
-          <li>
-            <a href="#" class="nav-link-custom">For Corporates</a>
-          </li>
+            <ul class="dropdown-menu dropdown-menu-end notification-dropdown-menu">
+              <li class="notification-header">What’s new</li>
 
-          <li>
-            <a href="#" class="nav-link-custom">En</a>
-          </li>
+              <li>
+                <a class="dropdown-item highlight" href="#">
+                  New course added: Advanced UI Design
+                </a>
+              </li>
 
-          <li>
-            <a href="#" class="nav-link-custom">Login</a>
-          </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  Trending now: Full-Stack MERN Pathway
+                </a>
+              </li>
 
-          <li class="pe-0">
-            <a href="#" class="sign-up montserrat-semibold">Sign Up</a>
-          </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  Enrollment open for January batch
+                </a>
+              </li>
 
-        </ul>
-      </nav>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
 
-      <!-- USER ICONS -->
-      <div class="d-flex align-items-center gap-4 flex-shrink-0 d-none" id="user-icons">
-
-        <!-- Notifications -->
-        <div class="dropdown notification-dropdown">
-          <div class="Usernotification-icon" role="button" data-bs-toggle="dropdown">
-            <i class="bi bi-bell-fill nav-icon-color fs-5"></i>
+              <li>
+                <a class="dropdown-item view-all" href="#">
+                  Explore all updates
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <ul class="dropdown-menu dropdown-menu-end notification-dropdown-menu">
-            <li class="notification-header">What’s new</li>
+          <!-- Wishlist -->
+          <div class="dropdown wishlist-dropdown">
+            <div class="Userwishlist-icon" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-heart-fill nav-icon-color fs-5"></i>
+            </div>
 
-            <li>
-              <a class="dropdown-item highlight" href="#">
-                New course added: Advanced UI Design
-              </a>
-            </li>
+            <ul class="dropdown-menu dropdown-menu-end wishlist-dropdown-menu">
+              <li class="wishlist-header">Your Wishlist</li>
 
-            <li>
-              <a class="dropdown-item" href="#">
-                Trending now: Full-Stack MERN Pathway
-              </a>
-            </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-bookmark me-2"></i> Saved Item One
+                </a>
+              </li>
 
-            <li>
-              <a class="dropdown-item" href="#">
-                Enrollment open for January batch
-              </a>
-            </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-bookmark me-2"></i> Saved Item Two
+                </a>
+              </li>
 
-            <li><hr class="dropdown-divider"></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
 
-            <li>
-              <a class="dropdown-item view-all" href="#">
-                Explore all updates
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Wishlist -->
-        <div class="dropdown wishlist-dropdown">
-          <div class="Userwishlist-icon" role="button" data-bs-toggle="dropdown">
-            <i class="bi bi-heart-fill nav-icon-color fs-5"></i>
+              <li>
+                <a class="dropdown-item view-all" href="#">
+                  View all wishlist
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <ul class="dropdown-menu dropdown-menu-end wishlist-dropdown-menu">
-            <li class="wishlist-header">Your Wishlist</li>
+          <!-- User -->
+          <div class="dropdown user-dropdown">
+            <div class="Userprofile-icon" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle nav-icon-color fs-5"></i>
+            </div>
 
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="bi bi-bookmark me-2"></i> Saved Item One
-              </a>
-            </li>
+            <ul class="dropdown-menu dropdown-menu-end user-dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-person me-2"></i> Profile
+                </a>
+              </li>
 
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="bi bi-bookmark me-2"></i> Saved Item Two
-              </a>
-            </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+              </li>
 
-            <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="bi bi-gear me-2"></i> Settings
+                </a>
+              </li>
 
-            <li>
-              <a class="dropdown-item view-all" href="#">
-                View all wishlist
-              </a>
-            </li>
-          </ul>
-        </div>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
 
-        <!-- User -->
-        <div class="dropdown user-dropdown">
-          <div class="Userprofile-icon" role="button" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle nav-icon-color fs-5"></i>
+              <li>
+                <a class="dropdown-item logout" href="#">
+                  <i class="bi bi-box-arrow-right me-2"></i> Logout
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <ul class="dropdown-menu dropdown-menu-end user-dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="bi bi-person me-2"></i> Profile
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="bi bi-speedometer2 me-2"></i> Dashboard
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="bi bi-gear me-2"></i> Settings
-              </a>
-            </li>
-
-            <li><hr class="dropdown-divider"></li>
-
-            <li>
-              <a class="dropdown-item logout" href="#">
-                <i class="bi bi-box-arrow-right me-2"></i> Logout
-              </a>
-            </li>
-          </ul>
         </div>
 
+        <!-- MOBILE MENU -->
+        <button class="btn d-lg-none text-muted">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
       </div>
 
-      <!-- MOBILE MENU -->
-      <button class="btn d-lg-none text-muted">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
+
 
     </div>
   </header>
@@ -262,22 +270,19 @@
             </div>
 
             <div class="d-flex demo open-sans-medium align-items-center gap-2">
-             
-              <a href="#" id="howItWorks">
-  <i class="bi bi-play-circle fs-1 demo-icon"> <span>How it works</span></i>
-</a>
 
-<div class="video-modal" id="videoModal">
-  <div class="video-wrapper">
-    <iframe
-      src="https://www.youtube.com/watch?v=R_oHWzg63xs"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-    <i class="bi bi-x-square modal-close-icon"></i>
-  </div>
-</div>
+              <a href="#" id="howItWorks">
+                <img class="me-2" src="Hero-Banner-Play-Icon.svg" alt=""><span>How it works</span></i>
+              </a>
+
+              <div class="video-modal" id="videoModal">
+                <div class="video-wrapper">
+                  <iframe src="https://www.youtube.com/watch?v=R_oHWzg63xs" frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen>
+                  </iframe>
+                  <i class="bi bi-x-square modal-close-icon"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -296,175 +301,648 @@
   </section>
 
   <!-- ================= Browse by Category  ================= -->
-   <section class="BrowsebyCategory">
+  <section class="BrowsebyCategory">
 
-    <div class=" position-relative section-title Category-Title open-sans-extrabold d-flex justify-content-center mt-5">
-      <span class="me-2">Browser</span>By Category
-    </div>
-   <div class="  position-absolute  mini-curve-line">
-  <svg viewBox="0 0 100 30" width="120" height="30">
-    <path
-    class="mini-curve-line-path"
-      d="M5 20 Q50 8 95 20"
-      fill="none"
-      stroke-width="2"
-      stroke-linecap="round"
-    />
-  </svg>
-</div>
- <div class="Category-subTitle open-sans-medium d-flex justify-content-center mb-5 mt-4">
-  <i>Discover the right learning opportunity for your domain.</i>
- </div>
+    <div class=" position-relative section-title Category-Title open-sans-extrabold text-center">
+      <span class="me-2 position-relative">Browse <svg class=" position-absolute  mini-curve-line" viewBox="0 0 100 30"
+          width="90" height="30">
+          <path class="mini-curve-line-path" d="M5 20 Q50 8 95 20" fill="none" stroke-width="2"
+            stroke-linecap="round" />
+        </svg></span>By Category
+      <div class="Category-subTitle open-sans-medium d-flex justify-content-center mb-5 mt-4">
+        <i>Discover the right learning opportunity for your domain.</i>
+      </div>
 
-<div class="Categories">
-  <div class="container">
-    <div class="row g-4">
+      <div class="Categories">
+        <div class="container">
+          <div class="row g-4">
 
-      <div class="col-3">
-        
-          <div class=" Category-Card open-sans-semibold cat-blue-card gap-5">
-            <a class="d-flex gap-3 align-items-center" href="">
-              <img src="category-blue.svg" alt=""> UI/UX Design
-            </a>
+            <div class="col-3">
+
+              <div class=" Category-Card open-sans-semibold cat-blue-card gap-5">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-blue.svg" alt=""> UI/UX Design
+                </a>
+              </div>
+            </div>
+
+
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-purple-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-purple.svg" alt=""> Graphics Design
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-yellow-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-yellow.svg" alt=""> Video & Photography
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-red-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-red.svg" alt=""> Business Management
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-blue-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-blue.svg" alt=""> Digital Marketing
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-purple-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-purple.svg" alt=""> Sales & Marketing
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-green-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-green.svg" alt=""> Arts & Design
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-red-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-red.svg" alt=""> Management Consulting
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-blue-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-blue.svg" alt=""> Human Resource
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-yellow-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-yellow.svg" alt=""> Personal Development
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-green-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-green.svg" alt=""> Product Design
+                </a>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="Category-Card open-sans-semibold cat-red-card">
+                <a class="d-flex gap-3 align-items-center" href="">
+                  <img src="category-red.svg" alt=""> Investment Banking
+                </a>
+              </div>
+            </div>
+
+  </section>
+
+  <!-- =========== About Us =========== -->
+  <div class="container-xxl">
+    <section class="AboutUs mt-5">
+
+      <div class="row p-5">
+        <div class="col-3">
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="about-card-wrapper position-relative">
+              <div class="about-secondary-container"></div>
+              <div class="about-primary-container d-flex justify-content-center align-items-center">
+                <img src="" alt="">
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="col-9">
+          <div class=" position-relative section-title About-Title open-sans-extrabold text-center">
+            <span class="me-2 position-relative">About <svg class=" position-absolute  mini-curve-line"
+                viewBox="0 0 100 30" width="90" height="30">
+                <path class="mini-curve-line-path" d="M5 20 Q50 8 95 20" fill="none" stroke-width="2"
+                  stroke-linecap="round" />
+              </svg></span>Mastersoft
+
+
+          </div>
+
+          <div class="About-content open-sans-regular">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est. Lorem ipsum dolor sit amet, consetetur sadipscing
+              elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+              At vero eos et accusam et.</p>
+          </div>
+
+          <div class="About-readMore-btn">
+            <a href="">Read More</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- CARDS -->
+    <section class="Credentials">
+      <div class=" position-relative section-title Category-Title open-sans-extrabold text-center">
+        <span class="me-2 position-relative">Explore <svg class=" position-absolute  mini-curve-line"
+            viewBox="0 0 100 30" width="90" height="30">
+            <path class="mini-curve-line-path" d="M5 20 Q50 8 95 20" fill="none" stroke-width="2"
+              stroke-linecap="round" />
+          </svg></span>MicroCredentials
+      </div>
+      <div class="Category-subTitle open-sans-medium d-flex justify-content-center mb-5 mt-4">
+        <i>Discover the right learning opportunity for your domain.</i>
+      </div>
+
+      <div class="credentials-tabs">
+        <div class="nav nav-tabs d-flex justify-content-center open-sans-semibold" id="nav-tab">
+          <button class="nav-link active" data-target="#nav-credentials">
+            Credentials (30)
+          </button>
+          <button class="nav-link" data-target="#nav-collections">
+            Collections (7)
+          </button>
+          <button class="nav-link" data-target="#nav-pathways">
+            Pathways (3)
+          </button>
+        </div>
+        </nav>
+
+        <!-- Curve SVG (ONE time only) -->
+        <svg class="mini-curve-line-tabs" viewBox="0 0 100 30" width="90" height="30">
+          <path class="mini-curve-line-path" d="M5 20 Q50 8 95 20" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" />
+        </svg>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane  show active" id="nav-credentials" role="tabpanel" aria-labelledby="nav-home-tab"
+            tabindex="0">
+
+            <div class="row mt-5">
+              <div class="col-3 ">
+                <div class="card-1">
+                  <div class="card-top d-flex  align-items-center">
+                    <div class="status online open-sans-semibold me-auto ">
+                      Online
+                    </div>
+                    <div class="card-TopRight d-flex justify-content-around gap-3">
+                      <div class="Heart">
+                        <i class="bi bi-heart"></i>
+
+                      </div>
+                      <div class="Share me-3">
+                        <i class="bi bi-share-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="img-area d-flex justify-content-center ">
+                    <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                      <div class="hero-secondary-container-cards position-absolute"></div>
+
+                      <div class="hero-primary-container-cards  d-flex justify-content-center">
+                        <img class="my-auto" src="InnerCard-svg.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cardTitle mt-3 open-sans-semibold text-center">
+                    Master in UI/UX Design
+                  </div>
+                  <div class="cardsubTitle mt-2 open-sans-regular text-center">
+                    UX101 - Fundamentals of UI/UX
+                  </div>
+                  <hr class="mb-0 ">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="badges">
+                      <span><img src="Badge-icon.png" alt=""> <img src="certificate-icon.png" alt=""></span>
+                    </div>
+                    <div class="Courseduration">
+                      2 weeks
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-3 ">
+                <div class="card-1">
+                  <div class="card-top d-flex  align-items-center">
+                    <div class="status bg-danger-subtle text-danger open-sans-semibold me-auto ">
+                      Online
+                    </div>
+                    <div class="card-TopRight d-flex justify-content-around gap-3">
+                      <div class="Heart">
+                        <i class="bi bi-heart"></i>
+
+                      </div>
+                      <div class="Share me-3">
+                        <i class="bi bi-share-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="img-area d-flex justify-content-center ">
+                    <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                      <div class="hero-secondary-container-cards position-absolute"></div>
+
+                      <div class="hero-primary-container-cards  d-flex justify-content-center">
+                        <img class="my-auto" src="InnerCard-svg.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cardTitle mt-3 open-sans-semibold text-center">
+                    Master in UI/UX Design
+                  </div>
+                  <div class="cardsubTitle mt-2 open-sans-regular text-center">
+                    UX101 - Fundamentals of UI/UX
+                  </div>
+                  <hr class="mb-0 ">
+
+                  <div class="d-flex justify-content-between align-items-center card-bottom">
+                    <div class="badges">
+                      <span><img src="Badge-icon.png" alt=""> <img src="certificate-icon.png" alt=""></span>
+                    </div>
+                    <div class="Courseduration mb-1">
+                      2 weeks
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 ">
+                <div class="card-1">
+                  <div class="card-top d-flex  align-items-center">
+                    <div class="status hybrid open-sans-semibold me-auto ">
+                      Online
+                    </div>
+                    <div class="card-TopRight d-flex justify-content-around gap-3">
+                      <div class="Heart">
+                        <i class="bi bi-heart"></i>
+
+                      </div>
+                      <div class="Share me-3">
+                        <i class="bi bi-share-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="img-area d-flex justify-content-center ">
+                    <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                      <div class="hero-secondary-container-cards position-absolute"></div>
+
+                      <div class="hero-primary-container-cards  d-flex justify-content-center">
+                        <img class="my-auto" src="InnerCard-svg.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cardTitle mt-3 open-sans-semibold text-center">
+                    Master in UI/UX Design
+                  </div>
+                  <div class="cardsubTitle mt-2 open-sans-regular text-center">
+                    UX101 - Fundamentals of UI/UX
+                  </div>
+                  <hr class="mb-0 ">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="badges">
+                      <span><img src="Badge-icon.png" alt=""> <img src="certificate-icon.png" alt=""></span>
+                    </div>
+                    <div class="Courseduration">
+                      2 weeks
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 ">
+                <div class="card-1">
+                  <div class="card-top d-flex  align-items-center">
+                    <div class="status online open-sans-semibold me-auto ">
+                      Online
+                    </div>
+                    <div class="card-TopRight d-flex justify-content-around gap-3">
+                      <div class="Heart">
+                        <i class="bi bi-heart "></i>
+
+
+                      </div>
+                      <div class="Share me-3">
+                        <i class="bi bi-share-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="img-area d-flex justify-content-center ">
+                    <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                      <div class="hero-secondary-container-cards position-absolute"></div>
+
+                      <div class="hero-primary-container-cards  d-flex justify-content-center">
+                        <img class="my-auto" src="InnerCard-svg.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cardTitle mt-3 open-sans-semibold text-center">
+                    Master in UI/UX Design
+                  </div>
+                  <div class="cardsubTitle mt-2 open-sans-regular text-center">
+                    UX101 - Fundamentals of UI/UX
+                  </div>
+                  <hr class="mb-0 ">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="badges">
+                      <span><img src="Badge-icon.png" alt=""> <img src="certificate-icon.png" alt=""></span>
+                    </div>
+                    <div class="Courseduration">
+                      2 weeks
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
 
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-purple-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-purple.svg" alt=""> Graphics Design
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-yellow-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-yellow.svg" alt=""> Video & Photography
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-red-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-red.svg" alt=""> Business Management
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-blue-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-blue.svg" alt=""> Digital Marketing
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-purple-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-purple.svg" alt=""> Sales & Marketing
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-green-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-green.svg" alt=""> Arts & Design
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-red-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-red.svg" alt=""> Management Consulting
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-blue-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-blue.svg" alt=""> Human Resource
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-yellow-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-yellow.svg" alt=""> Personal Development
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-green-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-green.svg" alt=""> Product Design
-      </a>
-    </div>
-  </div>
 
-  <div class="col-3">
-    <div class="Category-Card open-sans-semibold cat-red-card">
-      <a class="d-flex gap-3 align-items-center" href="">
-        <img src="category-red.svg" alt=""> Investment Banking
-      </a>
-    </div>
-  </div>
 
-   </section>
 
-<!-- =========== About Us =========== -->
-<div class="container-xxl">
-  <section class="AboutUs mt-5">
 
-    <div class="row p-5">
-      <div class="col-3">
-        <div class="d-flex justify-content-center align-items-center">
-          <div class="about-card-wrapper position-relative">          
-            <div class="about-secondary-container"></div>
-            <div class="about-primary-container d-flex justify-content-center align-items-center">
-              <img src="" alt="">
+          <!--  -->
+
+          <div class="tab-pane " id="nav-collections" role="tabcollections" aria-labelledby="nav-profile-tab"
+            tabindex="0">
+            <div class="row mt-5">
+              <div class="col-3 ">
+                <div class="card-1">
+                  <div class="card-top d-flex  align-items-center">
+                    <div class="status online open-sans-semibold me-auto ">
+                      Online
+                    </div>
+                    <div class="card-TopRight d-flex justify-content-around gap-3">
+                      <div class="Heart">
+                        <i class="bi bi-heart"></i>
+
+                      </div>
+                      <div class="Share me-3">
+                        <i class="bi bi-share-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="img-area d-flex justify-content-center ">
+                    <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                      <div class="hero-secondary-container-cards position-absolute"></div>
+
+                      <div class="hero-primary-container-cards  d-flex justify-content-center">
+                        <img class="my-auto" src="InnerCard-svg.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cardTitle mt-3 open-sans-semibold text-center">
+                    Data & Analytics </div>
+                  <div class="cardsubTitle mt-2 open-sans-regular text-center">
+                    DA-GRP </div>
+                  <hr class="mb-0 ">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="domain">
+                      domain
+                    </div>
+                    <div class="credentials-count">
+                      10 credentials
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-3 ">
+                <div class="card-1">
+                  <div class="card-top d-flex  align-items-center">
+                    <div class="status bg-danger-subtle text-danger open-sans-semibold me-auto ">
+                      Online
+                    </div>
+                    <div class="card-TopRight d-flex justify-content-around gap-3">
+                      <div class="Heart">
+                        <i class="bi bi-heart"></i>
+
+                      </div>
+                      <div class="Share me-3">
+                        <i class="bi bi-share-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="img-area d-flex justify-content-center ">
+                    <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                      <div class="hero-secondary-container-cards position-absolute"></div>
+
+                      <div class="hero-primary-container-cards  d-flex justify-content-center">
+                        <img class="my-auto" src="InnerCard-svg.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cardTitle mt-3 open-sans-semibold text-center">
+                    Data & Analytics </div>
+                  <div class="cardsubTitle mt-2 open-sans-regular text-center">
+                    DA-GRP </div>
+                  <hr class="mb-0 ">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="domain">
+                      domain
+                    </div>
+                    <div class="credentials-count">
+                      10 credentials
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 ">
+                <div class="card-1">
+                  <div class="card-top d-flex  align-items-center">
+                    <div class="status hybrid open-sans-semibold me-auto ">
+                      Online
+                    </div>
+                    <div class="card-TopRight d-flex justify-content-around gap-3">
+                      <div class="Heart">
+                        <i class="bi bi-heart"></i>
+
+                      </div>
+                      <div class="Share me-3">
+                        <i class="bi bi-share-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="img-area d-flex justify-content-center ">
+                    <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                      <div class="hero-secondary-container-cards position-absolute"></div>
+
+                      <div class="hero-primary-container-cards  d-flex justify-content-center">
+                        <img class="my-auto" src="InnerCard-svg.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cardTitle mt-3 open-sans-semibold text-center">
+                    Data & Analytics </div>
+                  <div class="cardsubTitle mt-2 open-sans-regular text-center">
+                    DA-GRP </div>
+                  <hr class="mb-0 ">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="domain">
+                      domain
+                    </div>
+                    <div class="credentials-count">
+                      10 credentials
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 ">
+                <div class="card-1">
+                  <div class="card-top d-flex  align-items-center">
+                    <div class="status bg-danger-subtle text-danger open-sans-semibold me-auto ">
+                      Online
+                    </div>
+                    <div class="card-TopRight d-flex justify-content-around gap-3">
+                      <div class="Heart">
+                        <i class="bi bi-heart"></i>
+
+                      </div>
+                      <div class="Share me-3">
+                        <i class="bi bi-share-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="img-area d-flex justify-content-center ">
+                    <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                      <div class="hero-secondary-container-cards position-absolute"></div>
+
+                      <div class="hero-primary-container-cards  d-flex justify-content-center">
+                        <img class="my-auto" src="InnerCard-svg.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cardTitle mt-3 open-sans-semibold text-center">
+                    Data & Analytics </div>
+                  <div class="cardsubTitle mt-2 open-sans-regular text-center">
+                    DA-GRP </div>
+                  <hr class="mb-0 ">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="domain">
+                      domain
+                    </div>
+                    <div class="credentials-count">
+                      10 credentials
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Pathways -->
+
+          <div class="tab-pane " id="nav-pathways" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+            <div class="row ">
+              <div class="col-6 ">
+                <div class="card-1-pathway position-relative">
+                  <div class="card-top d-flex  align-items-center">
+
+                    <div class="card-TopRight d-flex ms-auto mt-1 justify-content-around gap-3">
+                      <div class="Heart">
+                        <i class="bi bi-heart"></i>
+
+                      </div>
+                      <div class="Share me-3">
+                        <i class="bi bi-share-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="img-area d-flex justify-content-center ">
+                        <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                          <div class="hero-secondary-container-cards position-absolute"></div>
+
+                          <div class="hero-primary-container-cards  d-flex justify-content-center">
+                            <img class="my-auto" src="InnerCard-svg.svg" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="pathwayCard-right-side">
+                        <div class="cardTitle mt-3 open-sans-semibold">
+                          CALS Career Pathways: Collaborations </div>
+                        <div class="cardsubTitle mt-2 open-sans-regular ">
+                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                          invidunt ut
+                          labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                          dolores et ea rebum. Stet clita kasd gubergren, </div>
+                              <div class="read-more">
+                            <a href="">Read More</a>
+                          </div>
+                        <div class="d-flex justify-content-between align-items-center cardBottom-Pathway">
+                          
+                            <a class="credentials-count " href="">10 credentials</a>
+                            <a class="view-pathway " href="">View Pathway <i class="bi bi-arrow-right"></i></a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-9">
-      <div class=" position-relative section-title About-Title open-sans-extrabold d-flex justify-content-center ">
-      <span class="me-2">About</span>Mastersoft
-       <div class="  position-absolute  mini-curve-line">
-  <svg viewBox="0 0 100 30" width="120" height="30">
-    <path
-    class="mini-curve-line-path"
-      d="M5 20 Q50 8 95 20"
-      fill="none"
-      stroke-width="2"
-      stroke-linecap="round"
-    />
-  </svg>
-</div>
+    </section>
 
-    </div>
-
-    <div class="About-content open-sans-regular">
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.</p>
-    </div>
-
-    <div class="About-readMore-btn">
-      <a href="">Read More</a>
-    </div>
-      </div>
-    </div>
-
-  </section>
-</div>
-<script src="script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
