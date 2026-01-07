@@ -1,205 +1,269 @@
+document.addEventListener("DOMContentLoaded", () => {
 
+  /* ===============================
+     ICON ACTIVE TOGGLE (GENERIC)
+  =============================== */
+  document.querySelectorAll(".icon-item").forEach(icon => {
+    icon.addEventListener("click", e => {
+      e.stopPropagation();
+      document.querySelectorAll(".icon-item").forEach(i => i.classList.remove("active"));
+      icon.classList.add("active");
+    });
+  });
 
-
-  document.addEventListener("DOMContentLoaded", () => {
-
-    const loginItem = document.getElementById("login-item");
-    const signupItem = document.getElementById("signup-item");
-    const userIcons = document.getElementById("user-icons");
-
-    if (!loginItem || !signupItem || !userIcons) {
-      console.error("Navbar elements not found");
-      return;
-    }
-
-    function switchToUserUI(e) {
-      e.preventDefault();
-
-      // hide login & signup
-      loginItem.classList.add("d-none");
-      signupItem.classList.add("d-none");
-
-      // show user icons
-      userIcons.classList.remove("d-none");
-    }
-
-    loginItem.querySelector("a").addEventListener("click", switchToUserUI);
-    signupItem.querySelector("a").addEventListener("click", switchToUserUI);
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".icon-item").forEach(i => i.classList.remove("active"));
   });
 
 
-
-
-
-  const links = document.querySelectorAll(".nav-link-custom");
+  /* ===============================
+     NAV ACTIVE LINK (URL BASED)
+  =============================== */
   const currentPath = window.location.pathname;
-
-  links.forEach(link => {
+  document.querySelectorAll(".nav-link-custom").forEach(link => {
     if (link.getAttribute("href") === currentPath) {
       link.classList.add("active");
     }
   });
 
 
+  /* ===============================
+     MEGA MENU (CLICK + OUTSIDE)
+  =============================== */
+  const megaParent = document.querySelector(".mega-menu-parent");
+  const megaToggle = document.querySelector(".mega-toggle");
 
-const megaParent = document.querySelector(".mega-menu-parent");
-const megaToggle = document.querySelector(".mega-toggle");
+  if (megaParent && megaToggle) {
+    megaToggle.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      megaParent.classList.toggle("active");
+    });
 
-// open / close on click
-megaToggle.addEventListener("click", function (e) {
-  e.preventDefault();
-  e.stopPropagation(); // VERY IMPORTANT
-  megaParent.classList.toggle("active");
-});
+    megaParent.querySelector(".mega-menu")?.addEventListener("click", e => {
+      e.stopPropagation();
+    });
 
-// prevent closing when clicking inside menu
-megaParent.querySelector(".mega-menu").addEventListener("click", function (e) {
-  e.stopPropagation();
-});
-
-// close when clicking outside
-document.addEventListener("click", function () {
-  megaParent.classList.remove("active");
-});
+    document.addEventListener("click", () => {
+      megaParent.classList.remove("active");
+    });
+  }
 
 
-
-
+  /* ===============================
+     HEADER SCROLL EFFECT
+  =============================== */
   const header = document.querySelector(".Main-Header");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 2) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  });
+  if (header) {
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 2);
+    });
+  }
 
 
+  /* ===============================
+     VIDEO MODAL
+  =============================== */
   const openBtn = document.getElementById("howItWorks");
-const modal = document.getElementById("videoModal");
-const closeBtn = document.querySelector(".modal-close-icon");
+  const modal = document.getElementById("videoModal");
+  const closeBtn = document.querySelector(".modal-close-icon");
 
-openBtn.onclick = () => modal.style.display = "flex";
-closeBtn.onclick = () => modal.style.display = "none";
+  if (openBtn && modal && closeBtn) {
+    openBtn.onclick = () => modal.style.display = "flex";
+    closeBtn.onclick = () => modal.style.display = "none";
+  }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const toggles = document.querySelectorAll(
+  /* ===============================
+     BOOTSTRAP DROPDOWNS (ICON BASED)
+  =============================== */
+  const dropdownTriggers = document.querySelectorAll(
     ".Usernotification-icon, .Userwishlist-icon, .Userprofile-icon"
   );
 
-  toggles.forEach(toggle => {
-    toggle.addEventListener("click", (e) => {
+  dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener("click", e => {
       e.stopPropagation();
 
-      const dropdown = toggle.closest(".dropdown");
-      const menu = dropdown.querySelector(".dropdown-menu");
+      const current = bootstrap.Dropdown.getOrCreateInstance(trigger);
 
-      // Close all other dropdowns
-      document.querySelectorAll(".dropdown-menu.show").forEach(openMenu => {
-        if (openMenu !== menu) {
-          openMenu.classList.remove("show");
+      document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(el => {
+        if (el !== trigger) {
+          bootstrap.Dropdown.getInstance(el)?.hide();
         }
       });
 
-      // Toggle current one
-      menu.classList.toggle("show");
+      current.toggle();
     });
   });
 
-  // Close when clicking outside
   document.addEventListener("click", () => {
-    document.querySelectorAll(".dropdown-menu.show").forEach(menu => {
-      menu.classList.remove("show");
-    });
-  });
-});
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  const triggers = document.querySelectorAll(
-    ".Usernotification-icon, .Userwishlist-icon, .Userprofile-icon"
-  );
-
-  triggers.forEach(trigger => {
-    trigger.addEventListener("click", function (e) {
-      e.stopPropagation();
-
-      const currentDropdown = bootstrap.Dropdown.getOrCreateInstance(trigger);
-
-      // Close all other dropdowns
-      document
-        .querySelectorAll('[data-bs-toggle="dropdown"]')
-        .forEach(el => {
-          if (el !== trigger) {
-            const instance = bootstrap.Dropdown.getInstance(el);
-            if (instance) instance.hide();
-          }
-        });
-
-      // Toggle current dropdown
-      currentDropdown.toggle();
+    document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(el => {
+      bootstrap.Dropdown.getInstance(el)?.hide();
     });
   });
 
-  // Click outside → close all
-  document.addEventListener("click", function () {
-    document
-      .querySelectorAll('[data-bs-toggle="dropdown"]')
-      .forEach(el => {
-        const instance = bootstrap.Dropdown.getInstance(el);
-        if (instance) instance.hide();
-      });
+
+  /* ===============================
+     HEART TOGGLE
+  =============================== */
+  document.querySelectorAll(".Heart").forEach(heart => {
+    const icon = heart.querySelector("i");
+    heart.addEventListener("click", () => {
+      icon.classList.toggle("bi-heart");
+      icon.classList.toggle("bi-heart-fill");
+    });
   });
 
-});
 
-
-document.querySelectorAll(".Heart").forEach((heart) => {
-  const icon = heart.querySelector("i");
-
-  heart.addEventListener("click", () => {
-    if (icon.classList.contains("bi-heart-fill")) {
-      icon.classList.remove("bi-heart-fill");
-      icon.classList.add("bi-heart");
-    } else {
-      icon.classList.remove("bi-heart");
-      icon.classList.add("bi-heart-fill");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
+  /* ===============================
+     TABS WITH CURVE INDICATOR
+  =============================== */
   const tabs = document.querySelectorAll("#nav-tab .nav-link");
   const panes = document.querySelectorAll(".tab-pane");
   const curve = document.querySelector(".mini-curve-line-tabs");
 
-  // place curve under initially active tab
-  const activeTab = document.querySelector("#nav-tab .nav-link.active");
-  if (activeTab) {
-    activeTab.appendChild(curve);
+  if (curve) {
+    const activeTab = document.querySelector("#nav-tab .nav-link.active");
+    activeTab?.appendChild(curve);
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        tab.appendChild(curve);
+
+        panes.forEach(p => p.classList.remove("active"));
+        document.querySelector(tab.dataset.target)?.classList.add("active");
+      });
+    });
   }
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      // switch active tab
-      tabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
 
-      // move curve
-      tab.appendChild(curve);
+  /* ===============================
+     LANGUAGE DROPDOWN
+  =============================== */
+  const langDropdown = document.querySelector(".lang-dropdown");
+  const langToggle = document.querySelector(".lang-toggle");
+  const langMenu = document.querySelector(".lang-menu");
 
-      // switch content
-      panes.forEach(p => p.classList.remove("active"));
-      const target = tab.dataset.target;
-      document.querySelector(target).classList.add("active");
+  if (langDropdown && langToggle && langMenu) {
+
+    langToggle.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      langMenu.classList.toggle("open");
+      langToggle.classList.toggle("active");
+    });
+
+    langMenu.querySelectorAll("a").forEach(item => {
+      item.addEventListener("click", e => {
+        e.preventDefault();
+        langToggle.textContent = item.dataset.lang;
+        langMenu.classList.remove("open");
+        langToggle.classList.remove("active");
+      });
+    });
+
+    document.addEventListener("click", e => {
+      if (!e.target.closest(".lang-dropdown")) {
+        langMenu.classList.remove("open");
+        langToggle.classList.remove("active");
+      }
+    });
+
+    langDropdown.addEventListener("mouseleave", () => {
+      langMenu.classList.remove("open");
+      langToggle.classList.remove("active");
+    });
+  }
+
+
+  /* ===============================
+     NAV ICON ACTIVE STATE
+  =============================== */
+  const navIcons = document.querySelectorAll(".nav-icon");
+  navIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+      navIcons.forEach(i => i.classList.remove("active"));
+      icon.classList.add("active");
     });
   });
+
 });
 
+document.addEventListener("DOMContentLoaded", () => {
 
+  const nav = document.querySelector(".Navbar ul");
+  const iconBar = document.querySelector(".icon-bar");
+
+  const loginItem = document.getElementById("login-item");
+  const signupItem = document.getElementById("signup-item");
+  const credentialsLink = document.getElementById("credentials-link");
+
+  // helper: find <li> by link text
+  const getNavItemByText = (text) => {
+    return [...nav.querySelectorAll("li")]
+      .find(li => li.textContent.trim().startsWith(text));
+  };
+
+  const homeItem = getNavItemByText("Home");
+  const aboutItem = getNavItemByText("About");
+  const categoriesItem = nav.querySelector(".mega-menu-parent");
+  const corporatesItem = getNavItemByText("For Corporates");
+
+  const loginBtn = loginItem.querySelector("a");
+  const signupBtn = signupItem.querySelector("a");
+
+  /* ===============================
+     DEFAULT STATE (LOGGED OUT)
+  =============================== */
+  function setLoggedOutUI() {
+    homeItem.style.display = "";
+    aboutItem.style.display = "";
+    categoriesItem.style.display = "";
+    corporatesItem.style.display = "";
+
+    loginItem.style.display = "";
+    signupItem.style.display = "";
+
+    iconBar.style.display = "none";
+
+    credentialsLink.textContent = "Credentials";
+  }
+
+  /* ===============================
+     POST LOGIN STATE
+  =============================== */
+  function setLoggedInUI() {
+    homeItem.style.display = "none";
+    aboutItem.style.display = "none";
+    categoriesItem.style.display = "none";
+    corporatesItem.style.display = "none";
+
+    loginItem.style.display = "none";
+    signupItem.style.display = "none";
+
+    iconBar.style.display = "flex";
+
+    credentialsLink.textContent = "My Credentials";
+  }
+
+  /* ===============================
+     CLICK HANDLERS
+  =============================== */
+  loginBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    setLoggedInUI();
+  });
+
+  signupBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    setLoggedInUI();
+  });
+
+  /* ensure correct initial state */
+  setLoggedOutUI();
+
+});

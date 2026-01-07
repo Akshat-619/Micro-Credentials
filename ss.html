@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it Works - Certification Journey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Brand Colors */
+            --colors-primary: #6777EF;
+            --colors-primary-light: #8691f2;
+            --colors-primary-dark: #4e5fec;
+            
+            /* Neutral / Slate Scale */
+            --colors-slate-50: #f8fafc;
+            --colors-slate-100: #f1f5f9;
+            --colors-slate-200: #e2e8f0;
+            --colors-slate-300: #cbd5e1;
+            --colors-slate-400: #94a3b8;
+            --colors-slate-500: #64748b;
+            --colors-slate-600: #475569;
+            --colors-slate-700: #334155;
+            --colors-slate-800: #1e293b;
+            --colors-slate-900: #0f172a;
+            
+            /* Base Colors */
+            --colors-white: #ffffff;
+            --colors-black: #000000;
+            
+            /* Accent Colors */
+            --colors-purple-500: #a855f7;
+            --colors-purple-200: #e9d5ff;
+            --colors-purple-100: #E39FF6;
+            --colors-purple-50: #e9e2ff;
+            --colors-purple-70: #d4c6ff;
+            --colors-purple-10: #f3f0ff;
+            
+            --colors-orange-500: #f97316;
+            --colors-orange-100: #ffedd5;
+            
+            --colors-yellow-400: #facc15;
+            
+            --colors-green-50: #cee0d4;
+            
+            --colors-emerald-600: #10b981;
+            --colors-emerald-100: #d1fae5;
+            
+            --colors-blue-100: #dbeafe;
+            
+            --colors-indigo-500: #6366F1;
+            
+            --colors-red: #DC3545;
+            
+            /* Status Colors */
+            --colors-success: #10b981;
+            --colors-warning: #f97316;
+        }
+
+        body {
+            background-color: var(--colors-slate-50);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .how-it-works-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--colors-slate-900);
+            margin: 0;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--colors-slate-500);
+            font-size: 0.95rem;
+            margin-bottom: 50px;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step-item {
+            flex: 1;
+            min-width: 180px;
+            max-width: 200px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .step-circle-outer {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--colors-slate-300);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--colors-white);
+            transition: all 0.3s ease;
+        }
+
+        .step-circle-inner {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: var(--colors-slate-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .step-icon-wrapper i {
+            font-size: 24px;
+            color: var(--colors-slate-600);
+            transition: all 0.3s ease;
+        }
+
+        /* Step Number */
+        .step-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--colors-orange-500);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .step-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--colors-slate-900);
+            margin-bottom: 8px;
+        }
+
+        .step-description {
+            font-size: 0.85rem;
+            color: var(--colors-slate-500);
+            line-height: 1.5;
+        }
+
+        /* Connecting Lines */
+        .step-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -20px;
+            width: 20px;
+            height: 2px;
+            background: repeating-linear-gradient(
+                to right,
+                var(--colors-slate-300) 0,
+                var(--colors-slate-300) 5px,
+                transparent 5px,
+                transparent 10px
+            );
+        }
+
+        /* Hover Effects */
+        .step-item:hover .step-circle-outer {
+            border-color: var(--colors-primary);
+            transform: scale(1.05);
+        }
+
+        .step-item:hover .step-circle-inner {
+            background-color: var(--colors-primary);
+        }
+
+        .step-item:hover .step-icon-wrapper i {
+            color: var(--colors-white);
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step-item {
+                max-width: 100%;
+            }
+
+            .step-item:not(:last-child)::after {
+                display: none;
+            }
+
+            .step-item:not(:last-child)::before {
+                content: '';
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 20px;
+                background: repeating-linear-gradient(
+                    to bottom,
+                    var(--colors-slate-300) 0,
+                    var(--colors-slate-300) 5px,
+                    transparent 5px,
+                    transparent 10px
+                );
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="how-it-works-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>How it Works?</h2>
+            </div>
+            <div class="section-subtitle">
+                Your journey to certification in four simple steps
+            </div>
+
+            <div class="steps-container">
+                <!-- Step 1: Browse -->
+                <div class="step-item">
+                    <div class="step-icon-wrapper">
+                        <div class="step-circle-outer">
+                            <div class="step-circle-inner">
+                                <i class="fas fa-th"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="step-number">3</span>
+                    <div class="step-title">Browse</div>
+                    <div class="step-description">Create your catalog of skill interactive labs.</div>
+                </div>
+
+                <!-- Step 2: Learn in LMS -->
+                <div class="step-item">
+                    <div class="step-icon-wrapper">
+                        <div class="step-circle-outer">
+                            <div class="step-circle-inner">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="step-number">5</span>
+                    <div class="step-title">Learn in LMS</div>
+                    <div class="step-description">Access premium content and interactive labs.</div>
+                </div>
+
+                <!-- Step 3: Earn & Share -->
+                <div class="step-item">
+                    <div class="step-icon-wrapper">
+                        <div class="step-circle-outer">
+                            <div class="step-circle-inner">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="step-number">4</span>
+                    <div class="step-title">Earn & Share</div>
+                    <div class="step-description">Receive your digital badge interactive labs.</div>
+                </div>
+
+                <!-- Step 4: Earn & Share (LinkedIn) -->
+                <div class="step-item">
+                    <div class="step-icon-wrapper">
+                        <div class="step-circle-outer">
+                            <div class="step-circle-inner">
+                                <i class="fas fa-award"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="step-number">3.</span>
+                    <div class="step-title">Earn & Share</div>
+                    <div class="step-description">Receive your digital badge and share on LinkedIn.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

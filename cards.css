@@ -1,0 +1,180 @@
+/* ===============================
+   CARD BASE
+================================ */
+.card-1,
+.card-1-pathway {
+  position: relative;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+/* ===============================
+   CARD TOP BAR
+================================ */
+.card-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.status {
+  margin: 7px 14px;
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 10px;
+  background-color: #6777EF;
+  color: #ffffff;
+}
+
+/* ===============================
+   CARD TOP ICON BUTTONS
+================================ */
+.card-top-btn {
+  width: 31px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: rgba(103, 119, 239, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card-top-btn i {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+/* ===============================
+   IMAGE STACK (CREDENTIALS + COLLECTIONS)
+================================ */
+.hero-primary-container-cards,
+.hero-secondary-container-cards {
+  width: 153px;
+  height: 164px;
+  border-radius: 30px;
+  position: relative;
+}
+
+.hero-primary-container-cards {
+  background-color: #6777EF;
+  transform: rotate(-7deg);
+  z-index: 2;
+}
+
+.hero-secondary-container-cards {
+  background-color: rgba(103, 119, 239, 0.4);
+  transform: rotate(7deg);
+  z-index: 1;
+}
+
+/* ===============================
+   IMAGE STACK (PATHWAYS)
+================================ */
+.pathway-primary-container-cards,
+.pathway-secondary-container-cards {
+  width: 153px;
+  height: 164px;
+  border-radius: 30px;
+  position: relative;
+}
+
+.pathway-primary-container-cards {
+  background-color: #6777EF;
+  transform: rotate(-7deg);
+  z-index: 2;
+}
+
+.pathway-secondary-container-cards {
+  background-color: rgba(103, 119, 239, 0.4);
+  transform: rotate(7deg);
+  z-index: 1;
+}
+
+/* ===============================
+   CARD TEXT
+================================ */
+.cardTitle {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.cardsubTitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ===============================
+   CARD FOOTER
+================================ */
+.badges span,
+.Courseduration,
+.domain,
+.credentials-count {
+  font-size: 14px;
+  color: #64748b;
+  padding: 17px;
+}
+
+/* ===============================
+   CTA BUTTONS
+================================ */
+.card-cta-btns {
+  color: #6777EF;
+  background-color: rgba(103, 119, 239, 0.4);
+  border: 1px solid #6777EF;
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 10px;
+  text-decoration: none;
+  margin-right: 7px;
+}
+
+/* ===============================
+   READ MORE (PATHWAY)
+================================ */
+.read-more a {
+  color: #6777EF;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* ===============================
+   PATHWAY CARD
+================================ */
+.card-1-pathway {
+  padding: 30px;
+}
+
+/* ===============================
+   HEART TOGGLE ANIMATION
+================================ */
+.Heart i {
+  transition: opacity 0.2s ease;
+}
+
+.Heart .bi-heart-fill {
+  opacity: 0;
+}
+
+.Heart.active .bi-heart {
+  opacity: 0;
+}
+
+.Heart.active .bi-heart-fill {
+  opacity: 1;
+}
+
+/* Pop animation */
+@keyframes pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+.Heart.pop .bi-heart,
+.Heart.active.pop .bi-heart-fill {
+  animation: pop 0.35s ease;
+}
