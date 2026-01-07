@@ -219,36 +219,50 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      DEFAULT STATE (LOGGED OUT)
   =============================== */
-  function setLoggedOutUI() {
-    homeItem.style.display = "";
-    aboutItem.style.display = "";
-    categoriesItem.style.display = "";
-    corporatesItem.style.display = "";
+ function setLoggedInUI() {
+  homeItem.style.display = "none";
+  aboutItem.style.display = "none";
+  categoriesItem.style.display = "none";
+  corporatesItem.style.display = "none";
 
-    loginItem.style.display = "";
-    signupItem.style.display = "";
+  loginItem.style.display = "none";
+  signupItem.style.display = "none";
 
-    iconBar.style.display = "none";
+  iconBar.style.display = "flex"; // ✅ visible + flex layout
 
-    credentialsLink.textContent = "Credentials";
-  }
+  credentialsLink.textContent = "My Credentials";
+}
+
 
   /* ===============================
      POST LOGIN STATE
   =============================== */
-  function setLoggedInUI() {
-    homeItem.style.display = "none";
-    aboutItem.style.display = "none";
-    categoriesItem.style.display = "none";
-    corporatesItem.style.display = "none";
+function setLoggedOutUI() {
+  homeItem.style.display = "block";
+  aboutItem.style.display = "block";
+  categoriesItem.style.display = "block";
+  corporatesItem.style.display = "block";
 
-    loginItem.style.display = "none";
-    signupItem.style.display = "none";
+  loginItem.style.display = "block";
+  signupItem.style.display = "block";
 
-    iconBar.style.display = "flex";
+  iconBar.style.display = "none"; 
 
-    credentialsLink.textContent = "My Credentials";
-  }
+  credentialsLink.textContent = "Credentials";
+}
+
+
+/*Logout*/
+
+const logoutLink = document.getElementById("logout-link");
+
+if (logoutLink) {
+  logoutLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    setLoggedOutUI();
+  });
+}
+
 
   /* ===============================
      CLICK HANDLERS

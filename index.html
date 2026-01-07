@@ -36,11 +36,12 @@
         <!-- LOGO -->
 
         <div class="logo-box position-relative">
-          <a class="d-block w-100  " href="#"><img src="MS-Logo.webp" alt="Logo"></a>
+          <a class="d-block w-100" href="#"><img src="MS-Logo.webp" alt="Logo"></a>
         </div>
 
 
         <!-- NAV -->
+        <!-- DESKTOP NAV -->
         <nav class="d-none d-lg-flex ms-auto align-items-center fw-medium text-muted Navbar">
           <ul class="d-flex m-0 p-0 align-items-center list-unstyled position-relative">
 
@@ -49,11 +50,13 @@
             </li>
 
             <li>
-              <a href="#" class="nav-link-custom">About</a>
+              <a href="#" class="nav-link-custom text-dark">About</a>
             </li>
 
             <li>
-              <a href="#credentials" class="nav-link-custom" id="credentials-link">Credentials</a>
+              <a href="#credentials" class="nav-link-custom text-dark" id="credentials-link">
+                Credentials
+              </a>
             </li>
 
             <!-- MEGA MENU -->
@@ -64,7 +67,7 @@
                 <div class="mega-grid">
 
                   <div class="mega-col">
-                    <h6>Technology</h6>
+                    <h6 class="text-primary">Technology</h6>
                     <a href="#">Web Development</a>
                     <a href="#">AI & ML</a>
                     <a href="#">Data Science</a>
@@ -72,7 +75,7 @@
                   </div>
 
                   <div class="mega-col">
-                    <h6>Design</h6>
+                    <h6 class="text-primary">Design</h6>
                     <a href="#">UI / UX</a>
                     <a href="#">Graphic Design</a>
                     <a href="#">Motion Design</a>
@@ -80,7 +83,7 @@
                   </div>
 
                   <div class="mega-col">
-                    <h6>Business</h6>
+                    <h6 class="text-primary">Business</h6>
                     <a href="#">Marketing</a>
                     <a href="#">Finance</a>
                     <a href="#">Entrepreneurship</a>
@@ -88,7 +91,7 @@
                   </div>
 
                   <div class="mega-col">
-                    <h6>Career</h6>
+                    <h6 class="text-primary">Career</h6>
                     <a href="#">Internships</a>
                     <a href="#">Certifications</a>
                     <a href="#">Job Ready Paths</a>
@@ -100,13 +103,12 @@
             </li>
 
             <li>
-              <a href="#" class="nav-link-custom">For Corporates</a>
+              <a href="#" class="nav-link-custom text-dark">For Corporates</a>
             </li>
 
+            <!-- LANGUAGE -->
             <li class="lang-dropdown translator">
-              <a href="#" class="nav-link-custom lang-toggle ">
-                EN
-              </a>
+              <a href="#" class="nav-link-custom text-dark">EN</a>
 
               <ul class="lang-menu">
                 <li><a href="#" data-lang="EN">English</a></li>
@@ -118,7 +120,6 @@
               </ul>
             </li>
 
-
             <li id="login-item">
               <a href="#" class="nav-link-custom">Login</a>
             </li>
@@ -126,13 +127,16 @@
             <li class="pe-0" id="signup-item">
               <a href="#" class="CTA-btn montserrat-semibold">Sign Up</a>
             </li>
+
           </ul>
         </nav>
 
-        <!--  Post Login  -->
-        <div class="icon-bar">
 
-          <!-- Notification -->
+
+        <!--  Post Login  -->
+        <!-- POST LOGIN ICONS -->
+        <div class="icon-bar  ">
+
           <div class="icon-item" data-dropdown="notify">
             <i class="bi bi-bell"></i>
             <span class="badge">4</span>
@@ -145,7 +149,6 @@
             </div>
           </div>
 
-          <!-- Wishlist -->
           <div class="icon-item" data-dropdown="wishlist">
             <i class="bi bi-heart"></i>
 
@@ -156,7 +159,6 @@
             </div>
           </div>
 
-          <!-- Cart -->
           <div class="icon-item" data-dropdown="cart">
             <i class="bi bi-cart"></i>
             <span class="badge">2</span>
@@ -168,36 +170,39 @@
             </div>
           </div>
 
-          <!-- Profile -->
           <div class="icon-item" data-dropdown="profile">
             <i class="bi bi-person-circle"></i>
 
             <div class="icon-dropdown">
               <a href="#">My Profile</a>
               <a href="#">Settings</a>
-              <a href="#">Logout</a>
+              <a href="#" id="logout-link">Logout</a>
             </div>
           </div>
 
         </div>
 
 
+
+
         <!-- MOBILE MENU -->
-        <button class="btn d-lg-none text-muted">
+        <!-- MOBILE MENU BUTTON -->
+        <button class="btn d-lg-none ms-auto">
           <span class="material-symbols-outlined">menu</span>
         </button>
+
+
+
+
+
       </div>
-
-
-
-    </div>
   </header>
 
   <!-- ================= HERO ================= -->
   <section class="Hero-Banner mt-1 mx-4 pt-5 pb-5">
     <div class="container-xxl pt-5 my-5">
 
-      <div class="d-flex align-items-center">
+      <div class="d-flex flex-lg-row flex-column  align-items-center">
 
         <!-- LEFT CONTENT -->
         <div class="pe-5">
@@ -387,9 +392,9 @@
             </div>
           </div>
         </div>
-        <div class="col-9">
+        <div class="col-9 px-5">
 
-          <div class=" position-relative about-section-title About-Title open-sans-extrabold text-center">
+          <div class=" position-relative about-section-title About-Title open-sans-extrabold ">
             <div class="sectionHeading">
               <span class="me-2 position-relative">About <svg class=" position-absolute  mini-curve-line"
                   viewBox="0 0 100 30" width="90" height="30">
@@ -410,18 +415,18 @@
               At vero eos et accusam et.</p>
           </div>
           <div class="d-flex justify-content-between align-items-center">
-          <div class="About-readMore-btn montserrat-semibold">
-            <a href="">Read More</a>
-          </div>
+            <div class="About-readMore-btn montserrat-semibold">
+              <a href="">Read More</a>
+            </div>
 
-          <div class="social-media">
-            <a href=""><img src="globe.svg" alt=""></a>
-            <a href=""><img src="facebook.svg" alt=""></a>
-            <a href=""><img src="instagram.svg" alt=""></a>
-            <a href=""><img src="linkedin.svg" alt=""></a>
-            <a href=""><img src="x.svg" alt=""></a>
-            <a href=""><img src="yt.svg" alt=""></a>
-          </div>
+            <div class="social-media">
+              <a href=""><img src="globe.svg" alt=""></a>
+              <a href=""><img src="facebook.svg" alt=""></a>
+              <a href=""><img src="instagram.svg" alt=""></a>
+              <a href=""><img src="linkedin.svg" alt=""></a>
+              <a href=""><img src="x.svg" alt=""></a>
+              <a href=""><img src="yt.svg" alt=""></a>
+            </div>
           </div>
         </div>
       </div>
@@ -456,7 +461,7 @@
             Pathways (3)
           </button>
         </div>
-        </nav>
+
 
         <!-- Curve SVG (ONE time only) -->
         <svg class="mini-curve-line-tabs" viewBox="0 0 100 30" width="90" height="30">
@@ -659,48 +664,48 @@
         <div class="tab-pane " id="nav-collections" role="tabcollections" aria-labelledby="nav-profile-tab"
           tabindex="0">
           <div class="row mt-5">
-              <div class="col-3 ">
-                <div class="card-1">
-                  <div class="card-top d-flex  align-items-center">
-                    <div class="status bg-success-subtle text-success open-sans-semibold me-auto ">
-                      Online
-                    </div>
-                    <div class="card-TopRight d-flex justify-content-around gap-3">
-                      <div class="card-top-btn">
-                        <i class="bi bi-heart"></i>
-
-                      </div>
-                      <div class="card-top-btn me-3">
-                        <i class="bi bi-share-fill"></i>
-                      </div>
-                    </div>
+            <div class="col-3 ">
+              <div class="card-1">
+                <div class="card-top d-flex  align-items-center">
+                  <div class="status bg-success-subtle text-success open-sans-semibold me-auto ">
+                    Online
                   </div>
-                  <div class="img-area d-flex py-5 justify-content-center ">
-                    <div class="d-flex justify-content-center align-items-center position-relative mx-4">
-                      <div class="hero-secondary-container-cards position-absolute"></div>
+                  <div class="card-TopRight d-flex justify-content-around gap-3">
+                    <div class="card-top-btn">
+                      <i class="bi bi-heart"></i>
 
-                      <div class="hero-primary-container-cards  d-flex justify-content-center">
-
-                      </div>
-                      <img class="my-auto position-absolute" src="InnerCard-svg.svg" alt="">
                     </div>
-                  </div>
-
-                  <div class="cardTitle mt-3 open-sans-semibold text-center">
-                    Data & Analytics </div>
-                  <div class="cardsubTitle mt-2 open-sans-regular text-center">
-                    DA-GRP </div>
-                  <hr class="mb-0 ">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="domain">
-                      domain
-                    </div>
-                    <div class="card-cta-btns">
-                      10 credentials
+                    <div class="card-top-btn me-3">
+                      <i class="bi bi-share-fill"></i>
                     </div>
                   </div>
                 </div>
+                <div class="img-area d-flex py-5 justify-content-center ">
+                  <div class="d-flex justify-content-center align-items-center position-relative mx-4">
+                    <div class="hero-secondary-container-cards position-absolute"></div>
+
+                    <div class="hero-primary-container-cards  d-flex justify-content-center">
+
+                    </div>
+                    <img class="my-auto position-absolute" src="InnerCard-svg.svg" alt="">
+                  </div>
+                </div>
+
+                <div class="cardTitle mt-3 open-sans-semibold text-center">
+                  Data & Analytics </div>
+                <div class="cardsubTitle mt-2 open-sans-regular text-center">
+                  DA-GRP </div>
+                <hr class="mb-0 ">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="domain">
+                    domain
+                  </div>
+                  <div class="card-cta-btns">
+                    10 credentials
+                  </div>
+                </div>
               </div>
+            </div>
 
             <div class="col-3 ">
               <div class="card-1">
@@ -1065,10 +1070,67 @@
 
         </div>
       </div>
-  </div>
-  </section>
+
+    </section>
+
+    <!-- =========== How it Works =========== -->
+    <section class="HowitWorks">
+      <div class=" position-relative section-title Category-Title open-sans-extrabold text-center">
+        <div class="sectionHeading">
+          <span class="me-2 position-relative">How<svg class=" position-absolute  mini-curve-line" viewBox="0 0 100 30"
+              width="90" height="30">
+              <path class="mini-curve-line-path" d="M5 20 Q50 8 95 20" fill="none" stroke-width="2"
+                stroke-linecap="round" />
+            </svg></span>It Works
+          <div class="Category-subTitle open-sans-medium d-flex justify-content-center mb-5 mt-4">
+            <i>Discover the right learning opportunity for your domain in 4 simple steps.</i>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-3 d-flex">
+            <div class="how-it-works-step-card stepCard-1 flex-fill  align-items-center">
+              <span class="how-it-works-step-icon text-primary bg-primary-subtle step-card-elements-padding"><i class="bi bi-person-plus"></i></span>
+              <div class="how-it-works-step-title step-card-elements-padding">Create Account</div>
+              <div class="how-it-works-step-description text-slate step-card-elements-padding">Sign up for free and set up your profile to start your journey. It only takes a few seconds.</div>
+              <span class="how-it-works-step-stepCard mt-auto step-card-elements-padding how-it-works-step-stepCard bg-primary-subtle text-primary">Step 01</span>
+              
+            </div>
+          </div>
+
+           <div class="col-3 d-flex">
+            <div class="how-it-works-step-card flex-fill stepCard-2 align-items-center">
+              <span class="how-it-works-step-icon text-danger bg-danger-subtle step-card-elements-padding"><i class="bi bi-book"></i></span>
+              <div class="how-it-works-step-title step-card-elements-padding">Find Courses</div>
+              <div class="how-it-works-step-description text-slate step-card-elements-padding">Browse categories and find the perfect course that matches your career goals</div>
+              <span class="how-it-works-step-stepCard mt-auto step-card-elements-padding how-it-works-step-stepCard bg-danger-subtle text-danger">Step 02</span>
+            </div>
+           </div>
+
+            <div class="col-3 d-flex">
+              <div class="how-it-works-step-card flex-fill stepCard-3 align-items-center">
+              <span class="how-it-works-step-icon text-success bg-success-subtle step-card-elements-padding"><i class="bi bi-clock-history"></i></span>
+              <div class="how-it-works-step-title step-card-elements-padding">Start Leaning</div>
+              <div class="how-it-works-step-description text-slate step-card-elements-padding">Access high-quality lessons, quizzes, and projects. Learn at your own pace, anywhere.</div>
+              <span class="how-it-works-step-stepCard mt-auto step-card-elements-padding how-it-works-step-stepCard bg-success-subtle text-success">Step 03</span>  
+            </div>
+            </div>
+
+             <div class="col-3 d-flex">
+              <div class="how-it-works-step-card flex-fill stepCard-4 align-items-center">
+                <span class="how-it-works-step-icon text-warning bg-warning-subtle step-card-elements-padding"><i class="bi bi-trophy"></i></span>
+              <div class="how-it-works-step-title step-card-elements-padding">Get Certified</div>
+              <div class="how-it-works-step-description text-slate step-card-elements-padding">Complete your course and earn a verified credential to showcase on your CV.</div>
+              <span class="how-it-works-step-stepCard mt-auto step-card-elements-padding how-it-works-step-stepCard bg-warning-subtle text-warning">Step 04</span>
+            </div>
+             </div>
+
+        </div>
+      </div>
+
+    </section>
 
   </div>
+
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
