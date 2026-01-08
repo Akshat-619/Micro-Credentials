@@ -134,6 +134,9 @@
 }
 
 /* NAVIGATION COMPONENTS */
+/* ===============================
+   NAVIGATION LINKS
+================================ */
 .nav-link-custom {
   position: relative;
   text-decoration: none;
@@ -155,15 +158,8 @@
     transition: width 0.3s ease;
   }
 
-  &:hover {
-    color: colors.$primary;
-
-    &::after {
-      width: 100%;
-    }
-  }
-
-  /* active state (same as hover) */
+  /* HOVER + ACTIVE = SAME */
+  &:hover,
   &.active {
     color: colors.$primary;
 
@@ -173,7 +169,9 @@
   }
 }
 
-/* DROPDOWN COMPONENTS */
+/* ===============================
+   DROPDOWNS
+================================ */
 .dropdown-menu {
   z-index: 1200 !important;
   will-change: opacity, transform;
@@ -184,12 +182,15 @@
   animation: dropdownFade 0.18s ease-out;
 }
 
-/* BADGE COMPONENTS */
+/* ===============================
+   BADGES
+================================ */
 .badge {
   position: absolute;
   top: 6px;
   right: 6px;
   z-index: 2;
+
   min-width: 18px;
   height: 18px;
   padding: 0 5px;
@@ -206,12 +207,15 @@
   border-radius: 999px;
 }
 
-/* ICON COMPONENTS */
+/* ===============================
+   ICON BUTTONS
+================================ */
 .icon-item {
   position: relative;
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -229,19 +233,18 @@
     z-index: 2;
   }
 
-  &:hover {
-    background: rgba(colors.$primary, 0.08);
-    color: colors.$primary;
-
-  }
-
+  /* HOVER + ACTIVE SAME */
+  &:hover,
   &.active {
-    background: linear-gradient(135deg,
-        rgba(colors.$primary, 0.18),
-        rgba(colors.$indigo-500, 0.18));
+    background: linear-gradient(
+      135deg,
+      rgba(colors.$primary, 0.18),
+      rgba(colors.$indigo-500, 0.18)
+    );
     color: colors.$primary;
   }
 }
+
 
 /* CARD COMPONENTS */
 .Category-Card {
@@ -556,10 +559,7 @@ body {
   padding: 0px 16px;
 }
 
-/* LANGUAGE DROPDOWN */
-.translator {
-  border-right: 1px solid colors.$slate-600;
-}
+
 
 /* LANGUAGE TOGGLE ACTIVE STATE */
 .lang-toggle.active {
@@ -660,7 +660,7 @@ body {
 .icon-bar {
   display: flex;
   align-items: center;
-  margin-left: 24px;
+ 
 }
 
 /* ICON DROPDOWN */
@@ -675,7 +675,7 @@ body {
   border-radius: 16px;
   padding: 14px;
 
-  box-shadow: none; // ❌ removed shadow
+  box-shadow: none; // removed shadow
   backdrop-filter: blur(14px);
 
   opacity: 0;
@@ -700,9 +700,13 @@ body {
   }
 
   /* Dropdown links */
+
+  i {
+    font-size: 16px;
+  }
   a {
     display: block;
-    text-decoration: none; // ❌ no underline
+    text-decoration: none; // no underline
 
     padding: 8px 10px;
     border-radius: 10px;
@@ -710,7 +714,7 @@ body {
     font-size: 13px;
     font-weight: 500;
 
-    color: colors.$slate-900; // ✅ static dark text
+    color: colors.$slate-900; // static dark text
     background: transparent;
 
     transition: background 0.15s ease, color 0.15s ease;
@@ -905,54 +909,9 @@ body {
   }
 }
 
-/* CATEGORY CARDS */
-.Category-Card {
-  border-radius: 16px;
-  border: 1px solid transparent;
-  border-radius: 15px;
-  padding: 16px;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
-
-  /* Responsive category cards */
-  @media (max-width: 768px) {
-    padding: 12px;
-  }
-
-  @media (max-width: 576px) {
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-}
-
-.Category-Card:hover {
-  transform: translateY(1px);
-  box-shadow:
-    0 10px 10px rgba(15, 23, 42, 0.10),
-    0 2px 10px rgba(15, 23, 42, 0.04);
-  border-color: rgba(15, 23, 42, 0.08);
-}
-
-/* CATEGORY CARD LINKS */
-.Category-Card a {
-  text-decoration: none;
-  font-size: 16px;
-  color: colors.$slate-900;
-
-  /* Responsive category links */
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
-
-  @media (max-width: 576px) {
-    font-size: 13px;
-  }
-}
 
 /* CATEGORY CARD IMAGES */
-.Category-Card img {
+.Category-Card i {
   padding: 14px;
   border: 1px dashed #F2A700;
   border-radius: 9px;
@@ -972,49 +931,54 @@ body {
 }
 
 /* CATEGORY CARD COLORS */
-.cat-yellow-card {
+.yellow-card {
   background: #FFFAEF 0% 0% no-repeat padding-box;
 }
 
-.cat-yellow-card img {
+.yellow-card i {
   background: #FFF3D9 0% 0% no-repeat padding-box;
   border-color: #F2A700;
+  color: #F2A700;
 }
 
-.cat-purple-card {
+.purple-card  {
   background: #F7F3FF 0% 0% no-repeat padding-box;
 }
 
-.cat-purple-card img {
+.purple-card i {
   background: #DFD4F4 0% 0% no-repeat padding-box;
   border-color: #4500D0;
+  color: #4500D0;
 }
 
-.cat-green-card {
+.green-card {
   background: #EEFBF5 0% 0% no-repeat padding-box;
 }
 
-.cat-green-card img {
+.green-card i {
   background: #D1F5E4 0% 0% no-repeat padding-box;
   border-color: #00BC65;
-}
+  color: #00BC65;
+  }
 
-.cat-blue-card {
+.blue-card {
   background: #EAF6FF 0% 0% no-repeat padding-box;
 }
 
-.cat-blue-card img {
+.blue-card i {
   background: #D5E9FD 0% 0% no-repeat padding-box;
   border-color: #267CEA;
+  color: #267CEA;
 }
 
-.cat-red-card {
+.red-card {
   background: #FEF2F4 0% 0% no-repeat padding-box;
 }
 
-.cat-red-card img {
+.red-card i {
   background: #FEDDE3 0% 0% no-repeat padding-box;
   border-color: #FF6881;
+  color: #FF6881;
 }
 
 /* =====================================================
@@ -1180,7 +1144,7 @@ body {
 .social-media a img {
   height: 16px;
   width: 16px;
-  margin-left: 15px;
+  margin-left: 8px;
 
   /* Responsive social media icons */
   @media (max-width: 768px) {
@@ -1580,48 +1544,6 @@ body {
   }
 }
 
-/* HERO CTA BUTTON RESPONSIVE */
-.CTA-btn {
-  padding: 16px 32px;
-  font-size: 17px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  min-height: 52px;
-
-  /* Enhanced responsive CTA button */
-  @media (max-width: 1200px) {
-    padding: 15px 28px;
-    font-size: 16px;
-    min-height: 50px;
-  }
-
-  @media (max-width: 992px) {
-    padding: 14px 26px;
-    font-size: 15px;
-    min-height: 48px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 13px 24px;
-    font-size: 15px;
-    min-height: 46px;
-  }
-
-  @media (max-width: 576px) {
-    padding: 12px 22px;
-    font-size: 14px;
-    width: 100%;
-    justify-content: center;
-    min-height: 44px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 11px 20px;
-    font-size: 13px;
-    min-height: 42px;
-  }
-}
-
 /* HERO DEMO SECTION RESPONSIVE */
 .demo {
   font-size: 15px;
@@ -1671,8 +1593,8 @@ body {
 }
 
 .demo img {
-  height: 22px;
-  width: 22px;
+  height: 31px;
+  width: 31px;
 
   @media (max-width: 1200px) {
     height: 20px;
@@ -1931,9 +1853,7 @@ body {
   padding: 0px 16px;
 }
 
-.translator {
-  border-right: 1px solid colors.$slate-600;
-}
+
 
 /* EN link — active state when dropdown is open */
 .lang-toggle.active {
@@ -1944,52 +1864,6 @@ body {
     background-color: colors.$primary;
   }
 }
-
-
-
-
-.nav-link-custom {
-  position: relative;
-  text-decoration: none;
-  color: colors.$black;
-  font-weight: 600;
-  font-size: 16px;
-  text-transform: uppercase;
-  padding: 8px 0;
-  transition: color 0.3s ease;
-
-  /* pseudo underline */
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
-    height: 2px;
-    background-color: colors.$primary;
-    transition: width 0.3s ease;
-  }
-
-  /* hover state */
-  &:hover {
-    color: colors.$primary;
-
-    &::after {
-      width: 100%;
-    }
-  }
-
-  /* active state (same as hover) */
-  &.active {
-    color: colors.$primary;
-
-    &::after {
-      width: 100%;
-    }
-  }
-}
-
-
 
 .lang-dropdown {
   position: relative;
@@ -2056,41 +1930,6 @@ body {
 
 
 
-.CTA-btn {
-  display: inline-flex;
-  /* 🔥 REQUIRED for transform to work */
-  align-items: center;
-  justify-content: center;
-
-  background-color: colors.$primary;
-  border-radius: 24px;
-
-  padding: 14px 24px;
-  color: colors.$white;
-  text-decoration: none;
-
-  font-size: 16px;
-  line-height: 1;
-  text-transform: uppercase;
-
-
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    background-color 0.3s ease;
-}
-
-.CTA-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
-}
-
-.CTA-btn a {
-  color: colors.$white;
-  text-decoration: none;
-  font-size: 16px;
-}
 
 
 .nav-link-custom {
@@ -2122,12 +1961,6 @@ body {
 /* ================================
    POST-LOGIN ICON BAR
 ================================ */
-
-.icon-bar {
-  display: flex;
-  align-items: center;
-  margin-left: 24px;
-}
 
 /* ================================
    ICON ITEM (Bell / Heart / Cart / Profile)
@@ -2175,8 +2008,8 @@ body {
 
 .icon-item .badge {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  top: 3px;
+  right: 3px;
   z-index: 2;
   min-width: 18px;
   height: 18px;
@@ -2262,16 +2095,6 @@ body {
   }
 }
 
-
-/* ================================
-   SHOW DROPDOWN (JS CONTROLLED)
-================================ */
-
-.icon-item.active .icon-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
 
 /* ================================
    HEART ACTIVE COLOR
@@ -2463,38 +2286,6 @@ body {
 
 }
 
-.Category-Card a {
-  text-decoration: none;
-  font-size: 16px;
-  color: colors.$slate-900;
-}
-
-.Category-Card {
-  border-radius: 16px;
-  border: 1px solid transparent;
-  border-radius: 15px;
-  padding: 16px;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.Category-Card:hover {
-  transform: translateY(1px);
-  box-shadow:
-    0 10px 10px rgba(15, 23, 42, 0.10),
-    0 2px 10px rgba(15, 23, 42, 0.04);
-  border-color: rgba(15, 23, 42, 0.08);
-}
-
-
-.Category-Card img {
-  padding: 14px;
-  border: 1px dashed #F2A700;
-  border-radius: 9px;
-}
-
 .cat-yellow-card {
   background: #FFFAEF 0% 0% no-repeat padding-box;
 }
@@ -2617,6 +2408,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 14px 24px;
+    text-transform: uppercase;
 
     font-size: 16px;
     text-decoration: none;
@@ -2691,7 +2483,6 @@ body {
   border-width: 1px;
   border-style: solid;
   color: colors.$black;
-  background-color: colors.$primary;
   font-size: 10px;
 
 
@@ -2827,10 +2618,11 @@ body {
   height: 110px;
 }
 
-.cardTitle {
+.cardTitle a {
   margin-top: 0 !important;
   font-size: 14px;
   color: colors.$slate-900;
+  text-decoration: none;
 
 }
 
@@ -2884,8 +2676,8 @@ body {
 
 .card-cta-btns {
   color: colors.$primary;
-  background-color: rgba(colors.$primary, $alpha: 0.4);
-  border: 1px solid colors.$primary;
+  background-color: rgba(colors.$info, $alpha: 1);
+  border: 1px solid colors.$info;
   text-decoration: none;
   padding: 7px 14px;
   border-radius: 4px;
@@ -2893,15 +2685,7 @@ body {
   margin-right: 7px;
 }
 
-.view-pathway {
-  color: colors.$primary;
-  background-color: rgba(colors.$primary, $alpha: 0.4);
-  border: 1px solid colors.$primary;
-  text-decoration: none;
-  padding: 7px 14px;
-  border-radius: 4px;
-  font-size: 10px;
-}
+
 
 .card-1-pathway {
   box-shadow: 0px 3px 6px #00000029;
@@ -3030,6 +2814,12 @@ body {
   box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
 }
 
+
+
+.social-media a img:hover{
+  transform: scale(1.3);
+}
+
 /*Keyframes*/
 @keyframes dropdownFade {
   from {
@@ -3041,4 +2831,102 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ===============================
+   ACCORDION REAL FIX
+================================ */
+/* ===============================
+   BASE ACCORDION BUTTON
+================================ */
+.accordion-button {
+  font-size: 18px;
+  line-height: 1.2;
+  background: transparent !important;
+  transition: color 0.3s ease;
+}
+
+/* Remove bg when active */
+.accordion-button:not(.collapsed) {
+  background: transparent;
+  color: colors.$primary;
+}
+
+/* Remove focus */
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* ===============================
+   ICON (DEFAULT)
+================================ */
+.accordion-button::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 32px;
+  width: 32px;
+  border-radius: 100%;
+
+  font-family: bootstrap-icons !important;
+  content: "\F282";
+  background-image: none;
+  background-position: center;
+
+  color: colors.$black;
+
+  transition: transform 0.35s ease, 
+              background-color 0.3s ease,
+              box-shadow 0.3s ease,
+              color 0.3s ease;
+
+  transition-delay: 0.12s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   HOVER (ONLY WHEN COLLAPSED)
+================================ */
+.accordion-button.collapsed:hover {
+  color: colors.$primary;
+}
+
+.accordion-button.collapsed:hover::after {
+  background-color: rgba(colors.$primary, 0.15);
+  color: colors.$primary;
+}
+
+/* ===============================
+   ACTIVE / EXPANDED STATE
+================================ */
+.accordion-button:not(.collapsed)::after {
+  background-color: colors.$primary;
+  color: colors.$white;
+  font-weight: 600;
+  transform: rotate(180deg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.accordion-button:not(.collapsed){
+  box-shadow: none;
+}
+
+/* ===============================
+   COLLAPSE ANIMATION
+================================ */
+.accordion-collapse {
+  transition: height 0.35s ease;
+}
+
+.accordion-collapse.collapsing.show {
+  transition: all 0.3s ease;
+}
+
+/* ===============================
+   ACCORDION ITEM
+================================ */
+.accordion-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 12px !important;
 }
