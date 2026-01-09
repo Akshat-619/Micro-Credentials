@@ -1,0 +1,236 @@
+
+.yellow-card {
+  background: #FFFAEF 0% 0% no-repeat padding-box;
+}
+
+.yellow-card img {
+  background: #FFF3D9 0% 0% no-repeat padding-box;
+  border-color: #F2A700;
+}
+
+
+.purple-card {
+
+  background: #F7F3FF 0% 0% no-repeat padding-box;
+
+}
+
+.purple-card img {
+  background: #DFD4F4 0% 0% no-repeat padding-box;
+  border-color: #4500D0;
+}
+
+
+.green-card {
+
+  background: #EEFBF5 0% 0% no-repeat padding-box;
+
+}
+
+.green-card img {
+  background: #D1F5E4 0% 0% no-repeat padding-box;
+  border-color: #00BC65;
+
+}
+
+.blue-card {
+
+  background: #EAF6FF 0% 0% no-repeat padding-box;
+
+}
+
+.blue-card img {
+  background: #D5E9FD 0% 0% no-repeat padding-box;
+  border-color: #267CEA;
+
+}
+
+.red-card {
+
+  background: #FEF2F4 0% 0% no-repeat padding-box;
+  ;
+}
+
+.red-card img {
+  background: #FEDDE3 0% 0% no-repeat padding-box;
+  border-color: #FF6881;
+
+}
+
+
+
+
+
+
+/*Credentials Card*/
+.card-1 {
+  position: relative;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 9px;
+}
+
+.status {
+  margin: 7px 14px;
+  padding: 7px 14px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  color: colors.$black;
+  font-size: 10px;
+
+
+
+
+  &.hybrid {
+    color: colors.$indigo-500;
+    background-color: rgba(colors.$indigo-500, $alpha: 0.5);
+    border-color: rgba(colors.$indigo-500, $alpha: 1);
+  }
+
+}
+
+.card-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+}
+
+.card-top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 31px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgba(colors.$primary, $alpha: 0.4);
+}
+
+.card-top-btn i {
+  display: inline-flex;
+  /* or inline-block */
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+  color: colors.$white;
+
+
+  transform: scale(1);
+
+}
+
+
+/* Default state */
+
+
+/* Active state */
+.Heart.active .bi-heart {
+  opacity: 0;
+}
+
+.Heart.active .bi-heart-fill {
+  opacity: 1;
+}
+
+/* Pop animation */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.35);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animate ONLY visible icon */
+.Heart.pop .bi-heart,
+.Heart.active.pop .bi-heart-fill {
+  animation: pop 0.35s ease;
+}
+
+
+/*Cards*/
+
+.hero-primary-container-cards {
+  width: 153px;
+  height: 164px;
+  transform: rotate(-7deg);
+  border-radius: 30px;
+  background-color: colors.$primary;
+  overflow: hidden;
+}
+
+.hero-secondary-container-cards {
+  width: 153px;
+  height: 164px;
+  transform: rotate(7deg);
+  border-radius: 30px;
+  background-color: rgba(colors.$primary, 0.4);
+
+
+}
+
+
+
+.hero-primary-container-cards img {
+  width: 86px;
+  height: 110px;
+}
+
+.cardTitle a {
+  margin-top: 0 !important;
+  font-size: 14px;
+  color: colors.$slate-900;
+  text-decoration: none;
+
+}
+
+.cardsubTitle {
+  font-size: 14px;
+  color: colors.$slate-500;
+}
+
+
+
+.Courseduration {
+  font-size: 14px;
+  color: colors.$slate-500;
+  padding: 17px;
+}
+
+
+.badges span {
+  padding: 17px;
+}
+
+.domain {
+  font-size: 14px;
+  color: colors.$slate-500;
+  padding: 17px;
+
+}
+
+.credentials-count {
+  font-size: 14px;
+  color: colors.$slate-500;
+  padding: 17px;
+}
+
+
+
+
+
+
+
+
+
+

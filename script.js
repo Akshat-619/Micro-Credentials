@@ -281,3 +281,20 @@ if (logoutLink) {
   setLoggedOutUI();
 
 });
+
+
+
+
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({
+      title: "Master in UI/UX Design",
+      text: "Check out this course!",
+      url: window.location.href
+    }).catch(err => console.log(err));
+  } else {
+    navigator.clipboard.writeText(window.location.href)
+      .then(() => alert("Link copied to clipboard"))
+      .catch(() => alert("Copy failed"));
+  }
+}
