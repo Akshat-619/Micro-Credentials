@@ -298,3 +298,17 @@ function sharePage() {
       .catch(() => alert("Copy failed"));
   }
 }
+
+
+
+const btn = document.getElementById("atcBtn");
+
+btn.addEventListener("click", () => {
+  btn.classList.add("added");
+
+  const icon = btn.querySelector("i");
+  icon.classList.remove("bi-cart");
+  icon.classList.add("bi-cart-check");
+
+  btn.disabled = true;
+});

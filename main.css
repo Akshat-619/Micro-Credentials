@@ -2436,12 +2436,21 @@ body {
   position: relative;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
   border-radius: 9px;
+  padding: 16px;
+}
+
+.card-1 hr {
+  border: none;
+  height: 1px;
+  background-color: #eef1f6;
+  margin: 16px 8px 12px; /* left & right inset */
+  opacity: 1;
 }
 
 .status {
   margin: 7px 14px;
-  padding: 7px 14px;
-  border-radius: 4px;
+  padding: 5px 10px;
+  border-radius: 10px;
   border-width: 1px;
   border-style: solid;
   color: #000000;
@@ -2467,9 +2476,8 @@ body {
   position: relative;
   width: 31px;
   height: 30px;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
-  background-color: rgba(103, 119, 239, 0.4);
 }
 
 .card-top-btn i {
@@ -2477,8 +2485,8 @@ body {
   /* or inline-block */
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  color: #ffffff;
+  font-size: 18px;
+  color: #94a3b8;
   transform: scale(1);
 }
 
@@ -2556,24 +2564,124 @@ body {
 
 .cardTitle a {
   margin-top: 0 !important;
-  font-size: 14px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   color: #0f172a;
   text-decoration: none;
 }
 
 .cardsubTitle {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #64748b;
+  line-height: 1.25rem;
 }
 
 .Courseduration {
-  font-style: 14px;
+  font-size: 0.75rem;
+  line-height: 1rem;
   color: #64748b;
-  padding: 17px;
 }
 
-.badges span {
-  padding: 17px;
+.v-divider {
+  width: 1px;
+  height: 14px;
+  background-color: #eef1f6;
+  margin-right: 8px;
+  margin-left: 2px;
+}
+
+.Courseprice {
+  font-size: 24px;
+}
+
+.rupee {
+  font-size: 26px;
+}
+
+.badges span img {
+  height: 20px;
+  width: 20px;
+}
+
+.Coursecard-bottom {
+  margin-top: 12px;
+}
+
+.Course-ATC-btn {
+  background-color: #6777EF;
+  color: #ffffff;
+  padding: 12px 20px;
+  min-width: 150px;
+  height: 44px;
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.25s ease, transform 0.15s ease;
+  box-shadow: 0 6px 12px rgba(103, 119, 239, 0.25);
+}
+
+/* Green sweep layer */
+.Course-ATC-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #10b981;
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+}
+
+/* Content stays above sweep */
+.Course-ATC-btn .content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Text */
+.Course-ATC-btn .btn-text {
+  transition: opacity 0.4s ease;
+}
+
+/* Icon size lock */
+.Course-ATC-btn i {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Success state */
+.Course-ATC-btn.added::after {
+  transform: translateX(0);
+}
+
+.Course-ATC-btn.added .btn-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.Course-ATC-btn.added .content {
+  gap: 0;
+}
+
+/* Press feedback */
+.Course-ATC-btn:active {
+  transform: scale(0.97);
+}
+
+/* Accessibility */
+.Course-ATC-btn:focus-visible {
+  outline: 3px solid rgba(103, 119, 239, 0.35);
+  outline-offset: 2px;
 }
 
 .domain {
@@ -2837,14 +2945,12 @@ body {
   border-radius: 28px;
   padding: 32px;
   height: 100%;
-  /* Softer default shadow */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Subtle hover (LESS lift & shadow) */
 .testimonial-card:hover {
-  transform: translateY(-2px); /* reduced from -6 / -8 */
+  transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -2883,18 +2989,17 @@ body {
 }
 
 /* ===============================
-   Image (NO SHADOW, CLEAN)
+   Image (HEIGHT LOCKED SAFELY)
 ================================ */
 .userImage {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3/4; /* 🔒 key fix */
   border-radius: 22px;
   overflow: hidden;
   position: relative;
-  background: #eef2ff; /* keeps image readable */
+  background: #eef2ff;
 }
 
-/* Optional subtle overlay (kept minimal) */
 .userImage::after {
   content: "";
   position: absolute;
@@ -2910,4 +3015,5 @@ body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  display: block;
 }/*# sourceMappingURL=main.css.map */

@@ -275,3 +275,7 @@
   color: #64748b;
   padding: 17px;
 }/*# sourceMappingURL=ss.css.map */
+
+.card-1 {
+  overflow: visible; /* or remove overflow completely */
+}
